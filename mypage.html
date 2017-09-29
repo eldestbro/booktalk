@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="description" content="전자책, 소설리딩, 커뮤니티, 전문가">
+		<title>BOOK talk</title>
+		<!-- css -->
+		<link rel="stylesheet" href="./asset/css/common.css">
+
+		<!-- js -->
+		<script src="https://www.ildongshop.com/w/js/jquery-1.11.3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<script src="https://www.ildongshop.com/w/js/ui-library.js"></script>
+		<script src="http://www.genie.co.kr/resources/commons/jscript/front.common.js?v=201708211439"></script>
+
+
+		
+
+	</head>
+	<body>
+		<div id="booktalk">
+			<header class="header">
+				<div class="header-top">
+					<div class="inner">
+						<h1>
+							<a href="http://booktalk.world" data-ajax="false">
+								<img src="./asset/images/logo_mobile.jpg" alt="BOOKtalk" class="mo">
+								<img src="./asset/images/logo.jpg" alt="BOOKtalk" class="pc">
+							</a>
+						</h1>
+						<div class="header-search">
+							<div class="header-btn-left btn-forward"><a href="#" ></a></div>
+							<div class="frm-search-area">
+								<form id="form-search-global" action="http://booktalk.world/mobile/book/search.php" data-ajax="false">
+									<div class="frm-search">
+										<input type="text" name="glk" id="glk" placeholder="검색어 입력" value="">
+									</div>
+									<button type="submit" class="search">search</button>
+								</form>
+							</div>
+						</div>
+						<a href="#overlayPanel" class="btn-menu"></a>
+						<span class="btn-search"></span>
+						<a href="#overlayPanel" class="btn-mypage">내 정보</a>
+						<a href="#overlayPanel" class="btn-cart">장바구니<i>123</i></a>
+
+						<div class="btn-mypage-login">
+							<p class="pic" style="background:url(http://cphoto.asiae.co.kr/listimglink/6/2017032810130486033_1.jpg) no-repeat 50% 50%;background-size:cover;">내사진</p>
+							<div class="layer-my">
+								<p class="name"><strong>닉네임은이곳에</strong>님</p>
+								<ul>
+									<li><a href="">내 서제<strong>257</strong></a></li>
+									<li><a href="#">주문<strong>257</strong></a></li>
+									<li><a href="#">위시 리스트<strong>257</strong></a></li>
+									<li><a href="#">친구<strong>257</strong></a></li>
+								</ul>
+								<a href="" class="logout">로그아웃</a>
+								<a href="" class="bookmark">즐겨찾기 게시글</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="navbar-item">
+					<div class="inner">
+						<ul>
+							<li class="item01"><a href="http://booktalk.world/mobile/book/today_new.php" data-ajax="false" ><h2>NEWS</h2></a></li>
+							<li class="item02"><a href="http://booktalk.world/mobile/book/best_steady.php" data-ajax="false" ><h2>BOOKS</h2></a></li>
+							<li class="item03"><a href="http://booktalk.world/mobile/book/recommand.php" data-ajax="false" ><h2>COMMUNITY</h2></a></li>
+						</ul>
+						<p class="add">
+							<a href="#">신간</a>
+							<a href="#">베스트</a>
+							<a href="#">추천</a>
+						</p>
+					</div>
+				</div>
+				
+			</header>
+			
+			<div class="content mypage">
+				<h2>My Page</h2>
+				<div class="util">
+					<a href="#">회원 정보 변경</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<div class="side-menu">
+					<dl>
+						<dt><a href="#">내 서재</a></dt>
+						<dd>
+							<a href="#">구매 목록</a>
+							<a href="#">읽은 책</a>
+							<a href="#">위시 리스트</a>
+						</dd>
+						<dt><a href="#">주문 관리</a></dt>
+						<dd>
+							<a href="#">주문ㆍ배송 조회</a>
+							<a href="#">취소ㆍ교환 내역</a>
+							<a href="#">환불ㆍ입금 내역</a>
+						</dd>
+						<dt><a href="#">캐시 관리</a></dt>
+						<dd>
+							<a href="#">북토크 캐시</a>
+							<a href="#">북토크 포인트</a>
+							<a href="#">북토크 쿠폰</a>
+						</dd>
+						<dt><a href="#">북마크 게시글</a></dt>
+						<dd></dd>
+						<dt><a href="#">회원 정보</a></dt>
+						<dd>
+							<a href="#">회원 정보 변경</a>
+							<a href="#">내 기기 관리</a>
+						</dd>
+					</dl>
+				</div>
+
+				<div class="info-area">
+					<div class="thumb">
+						<a href="#" class="btn-refresh">새로고침</a>
+					</div>
+					<div class="info">
+						<p class="name"><strong>닉네임은이곳에</strong>님</p>
+						<a href="mailto:" class="mail">manager@toyofirm.com</a>
+						<div class="message">
+							<strong>프로필 메시지</strong>
+							마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어마사루의 센스를 뛰어
+						</div>
+					</div>
+				</div>
+
+				<div class="quick">
+					<ul>
+						<li>
+							<h4>북토크 캐시</h4>
+							<strong class="point">10,000<span>원</span></strong>
+							<a href="#" class="btn">북토크 캐시 충전</a>
+						</li>
+						<li>
+							<h4>북토크 포인트</h4>
+							<strong class="point">10,000<span>원</span></strong>
+							<p class="txt">소멸 예정 <strong>0원</strong></p>
+						</li>
+						<li>
+							<h4>북토크 쿠폰</h4>
+							<strong class="point">3<span>개</span></strong>
+							<a href="#" class="btn">쿠폰 등록</a>
+						</li>
+						<li>
+							<h4>구매 목록</h4>
+							<strong class="point">193<span>권</span></strong>
+							<a href="#" class="btn">구매 내역 확인</a>
+						</li>
+						<li>
+							<h4>읽은 책</h4>
+							<strong class="point">193<span>권</span></strong>
+							<a href="#" class="btn">읽은 책 확인</a>
+						</li>
+						<li>
+							<h4>위시 리스트</h4>
+							<strong class="point">193<span>권</span></strong>
+							<a href="#" class="btn">위시 리스트 확인</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="progress">
+					<h3>진행 중인 주문 <span>(최근 3주 기준)</span></h3>
+					<ol>
+						<li><a href="#"><strong>입금 대기</strong><span class="number">0</span></a></li>
+						<li><a href="#"><strong>결제 완료</strong><span class="number">0</span></a></li>
+						<li><a href="#"><strong>배송 준비 중</strong><span class="number">0</span></a></li>
+						<li><a href="#"><strong>배송 중</strong><span class="number">0</span></a></li>
+						<li><a href="#"><strong>배송 완료</strong><span class="number">0</span></a></li>
+					</ol>
+					<div class="total">
+						<ul>
+							<li>취소 <strong>0</strong></li>
+							<li>교환 <strong>0</strong></li>
+							<li>반품 <strong>0</strong></li>
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+			<!-- main End -->
+			
+			<footer class="footer">
+				<div id="notice02" class="notice">
+					<div class="inner">
+						<h3>공지사항</h3>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요1 <span class="date">2017-09-15</span></a></div>
+								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요2 <span class="date">2017-09-15</span></a></div>
+								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요3 <span class="date">2017-09-15</span></a></div>
+								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요4 <span class="date">2017-09-15</span></a></div>
+								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요5 <span class="date">2017-09-15</span></a></div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
+					</div>
+				</div>
+				<script type="text/javascript">
+					var swiperNotice02 = new Swiper("#notice02 .swiper-container", {
+						pagination: "#notice02 .swiper-pagination",
+						slidesPerView: 1,
+						paginationClickable: true,
+						spaceBetween: 0,
+						loop: true,
+						autoplay: 4000
+					});
+				</script>
+				<div class="util">
+					<div class="inner">
+						<a href="#">로그인</a>
+						<a href="#">주문 배송</a>
+						<a href="#">고객 센터</a>
+					</div>
+				</div>
+				<p class="customer">고객센터 <a href="#">000-000</a></p>
+				<address>
+					㈜비콘 | 대표 박북톡 | 서울특별시 마포구 월드컵북로 396 누리꿈스퀘어 비즈타워 1103호<br />
+					사업자등록번호 000-00-00000<br />
+					통신판매업신고 제 0000-서울00 00-00000호<br />
+					개인정보보호 책임 <a href="mailto:">admin@booktalk.co.kr</a>
+					<p class="agree">
+						<a href="#">이용약관</a>
+						<a href="#">개인정보처리방침</a>
+						<a href="#">청소년보호정책</a>
+						<a href="#">사업자 정보 확인</a>
+					</p>
+					<p class="copyright"><em>©</em>BOOKTALK Corp.</p>
+				</address>
+
+			</footer>
+			
+			<div class="quick-menu-side">
+				<h3>최근 본 상품</h3>
+				<div class="lately">
+					<div class="product">
+						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
+						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
+						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
+						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
+					</div>
+				</div>
+				<a href="#" class="btn-cart">장바구니</a>
+			</div>
+			<script type="text/javascript">
+				$(".quick-menu-side .lately").pajinate({items_per_page: 2});
+
+				//사이드 퀵메뉴
+				var target = $(".quick-menu-side").offset().top-30;
+				function fixQuick() {
+					if ($(window).scrollTop() > target){
+						$(".quick-menu-side").addClass("active");
+					}else {
+						$(".quick-menu-side").removeClass("active");
+					}
+				}
+				$(window).scroll(fixQuick);
+			</script>
+		</div>
+	</body>
+</html>
