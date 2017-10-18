@@ -1,33 +1,44 @@
 <!doctype html>
 <html lang="ko">
 <head>
-	<title></title>
+	<title>OUR INVESTMENTS - SHINYOUNG ASSET MANAGEMENT</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" >
-	<meta name="author" content="" />
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<meta name="description" content="SHINYOUNG ASSET MANAGEMENT" />
 	<link rel="stylesheet" type="text/css" href="./assets/css/common.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".detail dt").on("click", function() {
-				$(".detail dt").removeClass("active");
-				$(".detail dd").removeClass("active");
-				$(this).addClass("active");
-				$(this).next("dd").addClass("active");
-			});
-		});
-	</script>
+	<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="./assets/js/common.js"></script>
 </head>
 <body>
 	<div id="shinyoung">
 		<header>
-			<h1><img src="/assets/images/logo.png" alt="shinyoung" /></h1>
-			<ul>
-				<li><a href="aboutShinyoung.html">ABOUT SHINYOUNG</a></li>
-				<li><a href="#">OUR INVESTMENTS</a></li>
-				<li><a href="#">CONTACT US</a></li>
-			</ul>
+			<div class="inner">
+				<h1><a href="index.html"><img src="./assets/images/logo.jpg" alt="shinyoung" /></a></h1>
+				<ul>
+					<li>
+						<a href="aboutShinyoung.html">ABOUT SHINYOUNG</a>
+						<div class="menu m1">
+							<a href="aboutShinyoung.html#History">History</a>
+							<a href="aboutShinyoung.html#Organization">Organization</a>
+							<a href="aboutShinyoung.html#KeyInvestmentProfessionals">Key Investment Professionals</a>
+							<a href="aboutShinyoung.html#AssetsUnderManagement">Assets Under Management</a>
+							<a href="aboutShinyoung.html#CorporateInformation">Corporate  Information</a>
+						</div>
+					</li>
+					<li>
+						<a href="ourInvestments.html" class="active">OUR INVESTMENTS</a>
+						<div class="menu m2">
+							<div class="inner">
+								<a href="ourInvestments.html#InvestmentPhilosophy">Investment Philosophy</a>
+								<a href="ourInvestments.html#ShinyoungMarathonEquityFund">Shinyoung Marathon Equity Fund</a>
+								<a href="ourInvestments.html#ShinyoungValueHighDividendEquityFund">Shinyoung Value High Dividend Equity Fund</a>
+							</div>
+						</div>
+					</li>
+					<li><a href="contactUs.html">CONTACT US</a></li>
+				</ul>
+			</div>
 		</header>
 		<div class="content our_investments">
 			<div class="inner">
@@ -35,21 +46,21 @@
 				<div class="detail">
 					<p class="title">View Details</p>
 					<dl>
-						<dt>Investment Philosophy</dt>
+						<dt id="InvestmentPhilosophy">Investment Philosophy</dt>
 						<dd>
-							<p>
+							<p class="txt01">
 								We are Korea’s The Most Trusted Investment Manager specializing in long-term value investing. <br />
 								We believe the best way to achieve returns is to focus on company fundamentals and take a long-term view of the markets. <br />
 								Our research-driven investment process aims to identify investment opportunities with the best underlying fundamentals.
 							</p>
 						</dd>
-						<dt>Shinyoung Marathon Equity Fund</dt>
+						<dt id="ShinyoungMarathonEquityFund">Shinyoung Marathon Equity Fund</dt>
 						<dd>
-							<ul>
+							<ul class="txt02">
 								<li>
 									·Shinyoung Marathon Equity is Shinyoung’s core flagship with which our value investing philosophy originates. <br />
 									 This fund represents Shinyoung’s years of investment record where we have experienced upturns and downturns <br />
-									 of market, economic cycles and financial crises. 
+									 of market, economic cycles and financial crises.
 								</li>
 								<li>
 									·The fund aims to achieve consistent long term growth via investments in undervalued stocks in Korea. <br />
@@ -58,56 +69,59 @@
 								</li>
 								<li>·The fund is not only one of the best performing value funds in Korea, but also boasts the longest track record.</li>
 							</ul>
-							
+
 							<div class="table-type-a">
-								<p class="title"><span>></span> Fund Profile</p>
+								<p class="stitle"><span>></span> Fund Profile</p>
 								<table>
 									<caption>Fund Profile</caption>
 									<colgroup>
-										<col width="" />
+										<col width="167" />
+										<col width="215" />
+										<col width="145" />
+										<col width="*" />
 									</colgroup>
 									<tbody>
 										<tr>
-											<th scope="row">Inception Date</th>
-											<td colspan="3">2002.04.25</td>
+											<th scope="row" class="top">Inception Date</th>
+											<td colspan="3" class="top last">2002.04.25</td>
 										</tr>
 										<tr>
 											<th scope="row">NAV Per Unit (KRW)</th>
-											<td>1,127.46 ( ▲ 4.57 )</td>
+											<td>1,127.46 ( <div class="arrow-top">▲</div> 4.57 )</td>
 											<th scope="row">NAV (KRW)</th>
-											<td>520,103,683,032</td>
+											<td class="last">520,103,683,032</td>
 										</tr>
 										<tr>
 											<th scope="row">Adjusted Unit Price (KRW)</th>
-											<td>6,737.57 ( ▲ 27.31 )</td>
+											<td>6,737.57 ( <div class="arrow-top">▲</div> 27.31 )</td>
 											<th scope="row">BM Adjusted Unit Price</th>
-											<td>2,616.84</td>
+											<td class="last">2,616.84</td>
 										</tr>
 										<tr>
 											<th scope="row">Geographic Focus</th>
-											<td colspan="3">Korea</td>
+											<td colspan="3" class="last">Korea</td>
 										</tr>
 										<tr>
 											<th scope="row">Domicile</th>
-											<td colspan="3">Korea</td>
+											<td colspan="3" class="last">Korea</td>
 										</tr>
 										<tr>
 											<th scope="row">Base Currency</th>
 											<td>KRW</td>
 											<th scope="row">Benchmark</th>
-											<td>KOSPI 90% + CD 91 Days 10%</td>
+											<td class="last">KOSPI 90% + CD 91 Days 10%</td>
 										</tr>
 										<tr>
 											<th scope="row">Front Load</th>
-											<td colspan="3" class="align-center">None</td>
+											<td colspan="3" class="last align-center">None</td>
 										</tr>
 										<tr>
 											<th scope="row">*Total Annual Fee</th>
-											<td colspan="3">1.49% ( Management : 0.46%  /  Distributor : 1.00%  /  Custodian : 0.025%  /  Administration : 0.005% )</td>
+											<td colspan="3" class="last">1.49% ( Management : 0.46%  /  Distributor : 1.00%  /  Custodian : 0.025%  /  Administration : 0.005% )</td>
 										</tr>
 										<tr>
 											<th scope="row">Redemption Fee</th>
-											<td colspan="3">Within 90 Days, 70% of Return</td>
+											<td colspan="3" class="last">Within 90 Days, 70% of Return</td>
 										</tr>
 									</tbody>
 								</table>
@@ -115,92 +129,94 @@
 							</div>
 
 							<div class="table-type-a">
-								<p class="title"><span>></span> Cumulative Return</p>
+								<p class="stitle"><span>></span> Cumulative Return</p>
 								<table>
 									<caption>Cumulative Return</caption>
 									<colgroup>
-										<col width="" />
+										<col width="16.6%" />
+										<col width="16.6%" />
+										<col width="16.6%" />
+										<col width="16.6%" />
+										<col width="16.6%" />
+										<col width="*" />
 									</colgroup>
 									<thead>
 										<tr>
-											<th colspan="6" scope="col">Cumulative Return</th>
+											<th colspan="6" scope="col" class="top last">Cumulative Return</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<th scope="col">1M</th>
+											<th scope="col" class="first">1M</th>
 											<th scope="col">6M</th>
 											<th scope="col">1Y</th>
 											<th scope="col">3Y</th>
 											<th scope="col">5Y</th>
-											<th scope="col">Since Inception</th>
+											<th scope="col" class="last">Since Inception</th>
 										</tr>
 										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td class="first">&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td class="last">&nbsp;</td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 
 							<div class="table-type-a">
-								<p class="title"><span>></span> Portfolio Holdings</p>
+								<p class="stitle"><span>></span> Portfolio Holdings</p>
 								<table>
 									<caption>Portfolio Holdings</caption>
-									<colgroup>
-										<col width="" />
-									</colgroup>
 									<thead>
 										<tr>
-											<th colspan="2" scope="col">Size</th>
-											<th colspan="2" scope="col">Sector / Industry Exposure</th>
-											<th colspan="2" scope="col">Top 5 Position</th>
+											<th colspan="2" scope="col" class="top">Size</th>
+											<th colspan="2" scope="col" class="top">Sector / Industry Exposure</th>
+											<th colspan="2" scope="col" class="top last">Top 5 Position</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>Large</td>
-											<td class="align-right">60.95</td>
-											<td>IT</td>
-											<td class="align-right">19.16</td>
-											<td>Samsung Electronics</td>
-											<td class="align-right">10.85</td>
+											<td class="first last">Large</td>
+											<td class="first">60.95</td>
+											<td class="last">IT</td>
+											<td class="first">19.16</td>
+											<td class="last">Samsung Electronics</td>
+											<td class="first last">10.85</td>
 										</tr>
 										<tr>
-											<td>Medium</td>
-											<td class="align-right">15.93</td>
-											<td>Financial Services</td>
-											<td class="align-right">16.96</td>
-											<td>GS</td>
-											<td class="align-right">3.18</td>
+											<td class="first last">Medium</td>
+											<td class="first">15.93</td>
+											<td class="last">Financial Services</td>
+											<td class="first">16.96</td>
+											<td class="last">GS</td>
+											<td class="first last">3.18</td>
 										</tr>
 										<tr>
-											<td>Small</td>
-											<td class="align-right">9.23</td>
-											<td>Chemicals</td>
-											<td class="align-right">11.85</td>
-											<td>POSCO</td>
-											<td class="align-right">2.80</td>
+											<td class="first last">Small</td>
+											<td class="first">9.23</td>
+											<td class="last">Chemicals</td>
+											<td class="first">11.85</td>
+											<td class="last">POSCO</td>
+											<td class="first last">2.80</td>
 										</tr>
 										<tr>
-											<td>KOSDAQ</td>
-											<td class="align-right">8.53</td>
-											<td>Heavy Industrials</td>
-											<td class="align-right">9.55</td>
-											<td>Hyundai Motors</td>
-											<td class="align-right">2.43</td>
+											<td class="first last">KOSDAQ</td>
+											<td class="first">8.53</td>
+											<td class="last">Heavy Industrials</td>
+											<td class="first">9.55</td>
+											<td class="last">Hyundai Motors</td>
+											<td class="first last">2.43</td>
 										</tr>
 										<tr>
-											<td>Preferred Shares</td>
-											<td class="align-right">5.37</td>
-											<td>KOSDAQ</td>
-											<td class="align-right">8.53</td>
-											<td>KCC</td>
-											<td class="align-right">2.23</td>
+											<td class="first last">Preferred Shares</td>
+											<td class="first">5.37</td>
+											<td class="last">KOSDAQ</td>
+											<td class="first">8.53</td>
+											<td class="last">KCC</td>
+											<td class="first last">2.23</td>
 										</tr>
 									</tbody>
 								</table>
@@ -208,17 +224,19 @@
 							</div>
 
 							<div class="table-type-a">
-								<p class="title"><span>></span> Volatility & Risk (1yr)</p>
+								<p class="stitle"><span>></span> Volatility & Risk (1yr)</p>
 								<table>
 									<caption>Volatility & Risk (1yr)</caption>
 									<colgroup>
-										<col width="" />
+										<col width="*" />
+										<col width="303" />
+										<col width="303" />
 									</colgroup>
 									<thead>
 										<tr>
-											<th scope="col"></th>
-											<th scope="col">Fund</th>
-											<th scope="col">Peer Average</th>
+											<th scope="col" class="top"></th>
+											<th scope="col" class="top">Fund</th>
+											<th scope="col" class="top">Peer Average</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -248,7 +266,7 @@
 							</div>
 
 						</dd>
-						<dt>Shinyoung Value High Dividend Equity Fund</dt>
+						<dt id="ShinyoungValueHighDividendEquityFund">Shinyoung Value High Dividend Equity Fund</dt>
 						<dd>
 							<ul>
 								<li>
@@ -265,9 +283,9 @@
 									 which is higher than 1.5% of  KOSPI listed companies’ dividend yield, and also higher than the interest  rate of 1.25%
 								</li>
 							</ul>
-							
+
 							<div class="table-type-a">
-								<p class="title"><span>></span> Fund Profile</p>
+								<p class="stitle"><span>></span> Fund Profile</p>
 								<table>
 									<caption>Fund Profile</caption>
 									<colgroup>
@@ -280,13 +298,13 @@
 										</tr>
 										<tr>
 											<th scope="row">NAV Per Unit (KRW)</th>
-											<td>1,137.50 ( ▲ 0.21 )</td>
+											<td>1,137.50 ( <div class="arrow-top">▲</div> 0.21 )</td>
 											<th scope="row">NAV (KRW)</th>
 											<td>1,099,750,957,462</td>
 										</tr>
 										<tr>
 											<th scope="row">Adjusted Unit Price (KRW)</th>
-											<td>7,747.05 ( ▲ 1.43)</td>
+											<td>7,747.05 ( <div class="arrow-top">▲</div> 1.43)</td>
 											<th scope="row">BM Adjusted Unit Price</th>
 											<td>3,286.64</td>
 										</tr>
@@ -322,7 +340,7 @@
 							</div>
 
 							<div class="table-type-a">
-								<p class="title"><span>></span> Cumulative Return</p>
+								<p class="stitle"><span>></span> Cumulative Return</p>
 								<table>
 									<caption>Cumulative Return</caption>
 									<colgroup>
@@ -355,12 +373,9 @@
 							</div>
 
 							<div class="table-type-a">
-								<p class="title"><span>></span> Portfolio Holdings</p>
+								<p class="stitle"><span>></span> Portfolio Holdings</p>
 								<table>
 									<caption>Portfolio Holdings</caption>
-									<colgroup>
-										<col width="" />
-									</colgroup>
 									<thead>
 										<tr>
 											<th colspan="2" scope="col">Size</th>
@@ -415,17 +430,19 @@
 							</div>
 
 							<div class="table-type-a">
-								<p class="title"><span>></span> Volatility & Risk (1yr)</p>
+								<p class="stitle"><span>></span> Volatility & Risk (1yr)</p>
 								<table>
 									<caption>Volatility & Risk (1yr)</caption>
 									<colgroup>
-										<col width="" />
+										<col width="*" />
+										<col width="303" />
+										<col width="303" />
 									</colgroup>
 									<thead>
 										<tr>
-											<th scope="col"></th>
-											<th scope="col">Fund</th>
-											<th scope="col">Peer Average</th>
+											<th scope="col" class="top"></th>
+											<th scope="col" class="top">Fund</th>
+											<th scope="col" class="top">Peer Average</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -460,8 +477,10 @@
 			</div>
 		</div>
 		<footer>
-			COPYRIGHTⓒ SHINYOUNG ASSET MANAGEMENT CO., LTD. ALL RIGHTS ARE RESERVED
-			<a href="#">｜Terms & Conditions｜</a>
+			<div class="inner">
+				<span>COPYRIGHTⓒ SHINYOUNG ASSET MANAGEMENT CO., LTD. ALL RIGHTS ARE RESERVED</span>
+				<a href="TermsConditions.html">｜Terms & Conditions｜</a>
+			</div>
 		</footer>
 	</div>
 </body>

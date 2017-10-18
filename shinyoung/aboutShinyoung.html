@@ -1,84 +1,44 @@
 <!doctype html>
 <html lang="ko">
 <head>
-	<title></title>
+	<title>SHINYOUNG ASSET MANAGEMENT</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" >
-	<meta name="author" content="" />
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<meta name="description" content="SHINYOUNG ASSET MANAGEMENT" />
 	<link rel="stylesheet" type="text/css" href="./assets/css/common.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		/*
-		* jQuery hashchange event - v1.3 - 7/21/2010
-		* http://benalman.com/projects/jquery-hashchange-plugin/
-		* 
-		* Copyright (c) 2010 "Cowboy" Ben Alman
-		* Dual licensed under the MIT and GPL licenses.
-		* http://benalman.com/about/license/
-		*/
-		(function($,e,b){var c="hashchange",h=document,f,g=$.event.special,i=h.documentMode,d="on"+c in e&&(i===b||i>7);function a(j){j=j||location.href;return"#"+j.replace(/^[^#]*#?(.*)$/,"$1")}$.fn[c]=function(j){return j?this.bind(c,j):this.trigger(c)};$.fn[c].delay=50;g[c]=$.extend(g[c],{setup:function(){if(d){return false}$(f.start)},teardown:function(){if(d){return false}$(f.stop)}});f=(function(){var j={},p,m=a(),k=function(q){return q},l=k,o=k;j.start=function(){p||n()};j.stop=function(){p&&clearTimeout(p);p=b};function n(){var r=a(),q=o(m);if(r!==m){l(m=r,q);$(e).trigger(c)}else{if(q!==m){location.href=location.href.replace(/#.*/,"")+q}}p=setTimeout(n,$.fn[c].delay)}$.browser.msie&&!d&&(function(){var q,r;j.start=function(){if(!q){r=$.fn[c].src;r=r&&r+a();q=$('<iframe tabindex="-1" title="empty"/>').hide().one("load",function(){r||l(a());n()}).attr("src",r||"javascript:0").insertAfter("body")[0].contentWindow;h.onpropertychange=function(){try{if(event.propertyName==="title"){q.document.title=h.title}}catch(s){}}}};j.stop=k;o=function(){return a(q.location.href)};l=function(v,s){var u=q.document,t=$.fn[c].domain;if(v!==s){u.title=h.title;u.open();t&&u.write('<script>document.domain="'+t+'"<\/script>');u.close();q.location.hash=v}}})();return j})()})(jQuery,this);
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".detail dt").on("click", function() {
-				$(".detail dt").removeClass("active");
-				$(".detail dd").removeClass("active");
-				$(this).addClass("active");
-				$(this).next("dd").addClass("active");
-			});
-
-			$("header ul li").hover(function(){
-				$(this).find(".menu").show();
-			},function(){
-				
-			});
-			$("header ul li .menu").hover(function(){
-				
-			},function(){
-				$(".menu").hide();
-			});
-						
-			$(window).hashchange(function(){
-				var hash = location.hash;
-				$(".detail dt").removeClass("active");
-				$(".detail dd").removeClass("active");
-				$(hash).addClass("active");
-				$(hash).next("dd").addClass("active");
-
-			});
-			$(window).hashchange();
-
-		});
-	</script>
+	<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="./assets/js/common.js"></script>
 </head>
 <body>
 	<div id="shinyoung">
 		<header>
-			<h1><img src="./assets/images/logo.jpg" alt="shinyoung" /></h1>
-			<ul>
-				<li>
-					<a href="aboutShinyoung.html">ABOUT SHINYOUNG</a>
-					<div class="menu m1">
-						<a href="aboutShinyoung.html#History">History</a>
-						<a href="aboutShinyoung.html#Organization">Organization</a>
-						<a href="aboutShinyoung.html#KeyInvestmentProfessionals">Key Investment Professionals</a>
-						<a href="aboutShinyoung.html#AssetsUnderManagement">Assets Under Management</a>
-						<a href="aboutShinyoung.html#CorporateInformation">Corporate  Information</a>
-					</div>
-				</li>
-				<li>
-					<a href="ourInvestments.html">OUR INVESTMENTS</a>
-					<div class="menu m2">
-						<div class="inner">
-							<a href="ourInvestments.html#InvestmentPhilosophy">Investment Philosophy</a>
-							<a href="ourInvestments.html#ShinyoungMarathonEquityFund">Shinyoung Marathon Equity Fund</a>
-							<a href="ourInvestments.html#ShinyoungValueHighDividendEquityFund">Shinyoung Value High Dividend Equity Fund</a>
-						</div> 
-					</div>
-				</li>
-				<li><a href="contactUs.html">CONTACT US</a></li>
-			</ul>
+			<div class="inner">
+				<h1><a href="index.html"><img src="./assets/images/logo.jpg" alt="shinyoung" /></a></h1>
+				<ul>
+					<li>
+						<a href="aboutShinyoung.html" class="active">ABOUT SHINYOUNG</a>
+						<div class="menu m1">
+							<a href="aboutShinyoung.html#History">History</a>
+							<a href="aboutShinyoung.html#Organization">Organization</a>
+							<a href="aboutShinyoung.html#KeyInvestmentProfessionals">Key Investment Professionals</a>
+							<a href="aboutShinyoung.html#AssetsUnderManagement">Assets Under Management</a>
+							<a href="aboutShinyoung.html#CorporateInformation">Corporate  Information</a>
+						</div>
+					</li>
+					<li>
+						<a href="ourInvestments.html">OUR INVESTMENTS</a>
+						<div class="menu m2">
+							<div class="inner">
+								<a href="ourInvestments.html#InvestmentPhilosophy">Investment Philosophy</a>
+								<a href="ourInvestments.html#ShinyoungMarathonEquityFund">Shinyoung Marathon Equity Fund</a>
+								<a href="ourInvestments.html#ShinyoungValueHighDividendEquityFund">Shinyoung Value High Dividend Equity Fund</a>
+							</div>
+						</div>
+					</li>
+					<li><a href="contactUs.html">CONTACT US</a></li>
+				</ul>
+			</div>
 		</header>
 		<div class="content about">
 			<div class="inner">
@@ -103,22 +63,265 @@
 							<img src="./assets/images/img_aboutShinyoung_organization.jpg" alt="" />
 						</dd>
 						<dt id="KeyInvestmentProfessionals">Key Investment Professionals</dt>
-						<dd></dd>
+						<dd class="keyInvestment-professionals">
+							Shinyoung boasts the industry’s longest management tenure, with senior managers having worked together for over 10 years.
+							<ul>
+								<li class="ceo">
+									<p class="name">Namkwon Huh <span>- Chief Executive Officer & Chief Investment Officer</span></p>
+									Mr. Huh holds both CEO and CIO roles, and has 25 years of experience in the asset management industry.
+									Mr. Huh’s investment career began at Shinyoung Securities’ wealth management and sales divisions where he
+									discovered the potential of value stocks in Korea market, and later joined Shinyoung Asset Management in 1996.
+									He has been a value investor ever since and has been a visionary leader of Shinyoung Asset Management.
+									Mr. Huh has been nominated as Korea’s best fund manager numerous times during his tenure at the firm.
+									Mr. Huh holds a B.A. in Public Administration from Korea University.
+									<img src="./assets/images/NamkwonHuh.png" alt="" />
+								</li>
+								<li>
+									<p class="name">Daehwan Kim <span>- Equity Department</span></p>
+									Mr. Kim has started his investment career and stayed with Shinyoung Asset Management from 1999.
+									Daehwan, coupled with Mr. Huh and the senior managers below,
+									built a cornerstone together to settle long term value investing in Korea.
+									He is now directing the equity department in which he oversees value and dividend stock portfolios.
+									Mr. Kim holds B.A. in Economics from Seoul National University.
+									<img src="./assets/images/DaehwanKim.png" alt="" />
+								</li>
+								<li>
+									<p class="name">Jooyoung Won <span>- Marathon Value Division</span></p>
+									After 17 years of of value investing at Shinyoung, Ms Won is still wholeheartedly positive about value stocks
+									in Korea and their future role in asset allocation. She now manages the flagship value funds; Marathon and
+									Marathon Mid Small cap. Her Mid Small cap portfolio started from 2001 when she began to manage
+									a discretionary account. Her approach is truly bottom-up, resulting in more balanced view of Korean equity market. Thanks to her contribution, Shinyoung has gained expertise in value stocks with wider scope irrespective
+									of market size. Jooyoung graduated from Ehwa Womens University and Ehwa Law School.
+									<img src="./assets/images/Jooyoung-Won.png" alt="" />
+								</li>
+								<li>
+									<p class="name">Inhee Park <span>- Dividend Value Division</span></p>
+									Ms. Park is one of the few portfolio managers who manages an open ended fund which is larger than 2 billion
+									USD in size. She has strong conviction in value and dividend stocks. When she first took charge of
+									the Shinyoung’s flagship fund; Shinyoung Value High Dividend, AUM was only 0.3 billion USD.
+									Her contribution to dividend investing funds has been immense not only for Shinyoung but also in Korea market.
+									Ms. Park started equity investment with KB Asset Management in 2000 and joined us in 2006.
+									She holds B.A. in English Language and Literature from Chung-Ang University.
+									<img src="./assets/images/Inhee-Park.png" alt="" />
+								</li>
+							</ul>
+
+						</dd>
 						<dt id="AssetsUnderManagement">Assets Under Management</dt>
 						<dd>
 							<p class="stxt"><span>></span> Total AuM : 13. 6 bn</p>
 							<img src="./assets/images/img_aboutShinyoung_AssetsUnderManagement.jpg" alt="" />
 						</dd>
 						<dt id="CorporateInformation">Corporate Information</dt>
-						<dd></dd>
+						<dd class="corporate-information">
+
+
+							<div class="table-type-a">
+								<p class="stitle"><span>></span> Shareholders</p>
+								<table>
+									<caption>Shareholders</caption>
+									<colgroup>
+										<col width="" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="row"></th>
+											<th scope="row"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Shinyoung Securities</td>
+											<td>85.9%</td>
+										</tr>
+										<tr>
+											<td>KoreanRe Reinsurance</td>
+											<td>9.4%</td>
+										</tr>
+										<tr>
+											<td>Seoul Guarantee Insurance</td>
+											<td>4.7%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="table-type-a">
+								<p class="stitle"><span>></span> Balance sheet</p>
+								<table>
+									<caption>Balance sheet</caption>
+									<colgroup>
+										<col width="" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th></th>
+											<th scope="row">FY2013</th>
+											<th scope="row">FY2014</th>
+											<th scope="row">FY2015</th>
+											<th scope="row">FY2016</th>
+											<th scope="row">FY2017</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="col">Total Assets</th>
+											<td>81.8</td>
+											<td>94.3</td>
+											<td>100.1</td>
+											<td>107.5</td>
+											<td>114.6</td>
+										</tr>
+										<tr>
+											<th scope="col">Total Liabilities</th>
+											<td>2</td>
+											<td>4.4</td>
+											<td>6.2</td>
+											<td>5.3</td>
+											<td>5.3</td>
+										</tr>
+										<tr>
+											<th scope="col">Capital</th>
+											<td>28.8</td>
+											<td>30.1</td>
+											<td>26.9</td>
+											<td>28.1</td>
+											<td>28.6</td>
+										</tr>
+										<tr>
+											<th scope="col">Total Capital</th>
+											<td>79.8</td>
+											<td>89.9</td>
+											<td>93.9</td>
+											<td>102.2</td>
+											<td>109.3</td>
+										</tr>
+									</tbody>
+								</table>
+								<p class="unit">(Units: USDmn)</p>
+							</div>
+
+							<div class="table-type-a">
+								<p class="stitle"><span>></span> Balance sheet</p>
+								<table>
+									<caption>Balance sheet</caption>
+									<colgroup>
+										<col width="" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th></th>
+											<th scope="row">FY2013</th>
+											<th scope="row">FY2014</th>
+											<th scope="row">FY2015</th>
+											<th scope="row">FY2016</th>
+											<th scope="row">FY2017</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="col">Operating Income</th>
+											<td>17.4</td>
+											<td>27</td>
+											<td>37.5</td>
+											<td>50</td>
+											<td>41.3</td>
+										</tr>
+										<tr>
+											<th scope="col">Operating Expenses</th>
+											<td>5.8</td>
+											<td>8.2</td>
+											<td>9.8</td>
+											<td>11</td>
+											<td>11.2</td>
+										</tr>
+										<tr>
+											<th scope="col">Operating Profit</th>
+											<td>11.5</td>
+											<td>18.9</td>
+											<td>27.7</td>
+											<td>30</td>
+											<td>30.1</td>
+										</tr>
+										<tr>
+											<th scope="col">Net Profit</th>
+											<td>9.5</td>
+											<td>15.2</td>
+											<td>21.7</td>
+											<td>23.5</td>
+											<td>23.5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="table-type-a">
+								<p class="stitle"><span>></span> Key Financial Ratios</p>
+								<table>
+									<caption>Key Financial Ratios</caption>
+									<colgroup>
+										<col width="" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th></th>
+											<th scope="row">FY2013</th>
+											<th scope="row">FY2014</th>
+											<th scope="row">FY2015</th>
+											<th scope="row">FY2016</th>
+											<th scope="row">FY2017</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="col">ROE</th>
+											<td>12.2</td>
+											<td>17.6</td>
+											<td>25</td>
+											<td>23.5</td>
+											<td>22.0</td>
+										</tr>
+										<tr>
+											<th scope="col">Net Capital Ratio</th>
+											<td>980</td>
+											<td>773</td>
+											<td>607</td>
+											<td>510</td>
+											<td>498</td>
+										</tr>
+										<tr>
+											<th scope="col">Shareholder Equity Ratio</th>
+											<td>97.5</td>
+											<td>95.4</td>
+											<td>93.8</td>
+											<td>94.9</td>
+											<td>95.4</td>
+										</tr>
+										<tr>
+											<th scope="col">Debt Ratio</th>
+											<td>2.5</td>
+											<td>4.8</td>
+											<td>6.6</td>
+											<td>5.2</td>
+											<td>4.8</td>
+										</tr>
+									</tbody>
+								</table>
+								<p class="stxt">*Source : Korea Financial Investment Association<br />
+								*Currency rate : Mar 29, 2013 (KRW1,111.0 = USD1.00) / Mar 31, 2014 (KRW1,062.5 = USD1.00) / Mar 31, 2015 (KRW1,110.5 = USD1.00)<br />
+								/ Mar 31, 2016 (KRW1,140.5 = USD1.00) / Mar 31, 2017 (KRW1,118.5 = USD1.00)</p>
+							</div>
+
+
+						</dd>
 					</dl>
 				</div>
 			</div>
 		</div>
 		<footer>
 			<div class="inner">
-				COPYRIGHTⓒ SHINYOUNG ASSET MANAGEMENT CO., LTD. ALL RIGHTS ARE RESERVED
-				<a href="#">｜Terms & Conditions｜</a>
+				<span>COPYRIGHTⓒ SHINYOUNG ASSET MANAGEMENT CO., LTD. ALL RIGHTS ARE RESERVED</span>
+				<a href="TermsConditions.html">｜Terms & Conditions｜</a>
 			</div>
 		</footer>
 	</div>
