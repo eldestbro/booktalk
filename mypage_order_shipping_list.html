@@ -23,7 +23,7 @@
 	</head>
 	<body>
 		<div id="booktalk">
-
+			
 			<div class="content mypage">
 				<h2>My Page</h2>
 				<div class="util">
@@ -59,36 +59,53 @@
 						</dd>
 					</dl>
 				</div>
-				<div class="title">
-					<h3>주문관리</h3>
-					<a href="#">주문ㆍ배송 조회</a>
-				</div>
-				<div class="order-detail">
-					<h4>주문 내역 상세</h4>
-					<div class="detail">
-						<div class="stitle">
-							<ul>
-								<li><strong>구매 날짜</strong> 2017-10-25 15:25</li>
-								<li><strong>주문 번호</strong> 2017-1024-0002781</li>
-							</ul>
-						</div>
-						<table summary="">
-							<caption></caption>
-							<tbody>
-								<tr>
-									<th scope="row"></th>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
+				<div class="shipping-list">
+					<div class="title">
+						<h3>주문관리</h3>
+						<h4>구매내역</h4>
 					</div>
-					<div class="caution">
-						* 구매 취소는 결제일로부터 7일 이내에 다운로드 또는 스트리밍으로 이용하지 않은 도서만 가능합니다.<br />
-						* 구매 취소는 결제일로부터 7일 이내에 다운로드 또는 스트리밍으로 이용하지 않은 도서만 가능합니다.<br />
-						* 구매 취소는 결제일로부터 7일 이내에 다운로드 또는 스트리밍으로 이용하지 않은 도서만 가능합니다.<br />
+					<div class="sort">
+						<select name="" id=""></select>
 					</div>
+					<p class="total">총 <strong>93</strong>건</p>
+					<div class="list">
+						<ul>
+							<li>
+								<dl>
+									<dt>
+										<strong>구매 날짜</strong>2017-10-25 15:25
+										<strong>주문 번호</strong>2017-1025-0002781
+										<a href="" class="btn">주문 상세</a>
+									</dt>
+									<dd>
+										시빌 워(eBook) 외 27권 <span class="price"><strong>270,000</strong>원</span>
+										<a href="" class="btn">1:1 문의</a>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<!-- paginate -->
+					<div class="paginate">
+						<a href="#" class="btn btn_prev">이전</a>
+						<span class="num">
+							<a href="#" class="active">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>
+						</span>
+						<a href="#" class="btn btn_next">다음</a>
+					</div>
+					<!-- //paginate -->
 				</div>
-				
 			</div>
+
+		</div>
 	</body>
 </html>
