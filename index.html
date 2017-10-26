@@ -1,565 +1,147 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<title>신세계백화점</title>
+<link rel="stylesheet" type="text/css" href="http://vipm.shinsegae.com/vipmobile/resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="http://vipm.shinsegae.com/vipmobile/resources/css/popup.css">
+<script type="text/javascript" src="http://vipm.shinsegae.com/vipmobile/resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://vipm.shinsegae.com/vipmobile/resources/js/jquery.bpopup.min.js"></script>
+<script type="text/javascript" src="http://vipm.shinsegae.com/vipmobile/resources/js/jquery-barcode-2.0.2.min.js"></script>
+<script type="text/javascript" src="http://vipm.shinsegae.com/vipmobile/resources/js/swiper.min.js"></script>
+<script type="text/javascript" src="http://vipm.shinsegae.com/vipmobile/resources/js/fn_map.js"></script>
+<script type="text/javascript" src="http://vipm.shinsegae.com/vipmobile/resources/js/fn_com.js?version=20160531"></script>
+<script type="text/javascript">
+var width = window.screen.width;
+if (width == 320) {
+ // document.write('<meta name="viewport" content="width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=0.88,user-scalable=no">');
+ document.write('<meta id="viewport" name="viewport" content="width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=4.0,user-scalable=yes">');
+} else {
+ // document.write('<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">');
+ document.write('<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes">');
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//세대원일 경우 세대원 신청 여부 확인 후 신청 버튼 HIDE
+	if("N" == "N" && "" != ""){
+		//alert("세대원이냐고?");
+		$("span").each(function(){
+			if($(this).text() == "신청"){
+				$(this).hide();
+			}
+		});
+	}
+
+	// [첫번째 STEP] 품목그룹 선택창 버튼 이벤트 활성화
+	$('#req_cancel').click(function() {
+		hideStep1();
+	});
+	$('#req_confirm').click(function() {
+		//alert("#req_confirm click event");
+		step1Confirm();
+	});
+});
+
+
+/*********************************************************************이벤트 신청 프로세스 변경 START*************************************************************************/
+// 이벤트 신청 팝업
+function reqEventPopNew(chkUpd, id){
+	// 뷰포트 초기화 - 확대 불가 (171026 수정)
+	var width = window.screen.width;
+	if (width == 320){
+		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=0.88,user-scalable=no');
+	}else{
+		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no');
+	}
+
+	rtnChkUpd = chkUpd;
+	if (rtnChkUpd == true) {
+		idx = id;
+	} else {
+		idx = '';
+	}
+
+	rtnReqVal = false;							// 초기화
+	rtnHopeDtNone = true;
+	step1GetPassenger();						// 인원 selectbox 셋팅
+	step1SetModValues();						// 수정 시 값 셋팅
+	step1SetRemainCntPt();						// 남은 신청 회수, 포인트
+	
+	setVisiblity('dim', true);
+	setVisiblity('step1ReqPop', true);
+
+	// 여기부터 초기화 다시
+	// 셀렉트 박스 레이어 드롭다운, 토글 클래스
+	var toggleClick = function(){
+		if(clicked == true) { 
+			return false;
+		}
 		
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-		<meta name="description" content="전자책, 소설리딩, 커뮤니티, 전문가">
-		<title>BOOK talk</title>
-		<!-- css -->
-		<link rel="stylesheet" href="./asset/css/common.css">
+		clicked = true;
+		var divObj = $(this).next();
+		var nstyle = divObj.css('display');
+		if(nstyle == 'none'){
+			$('.op_lst').slideUp('fast');
+			$('.op_lb').removeClass('open');
+			divObj.slideDown('fast');
+			$(this).addClass('open');
+		}else{
+			divObj.slideUp('fast');
+			$(this).removeClass('open');
+		}
+
+		setTimeout ('fnClickInit()', delay);
+	};
+	$('.op_lb').bind('touchstart click',toggleClick);
+	$(document).bind('touchstart click',function(e){
+		if(!$(e.target).is('.op_lb, .op_lst li')){			
+			$('.op_lb').next().slideUp('fast').prev().removeClass('open');
+			$('html').unbind('click');
+		} else {
+			e.preventDefault();
+		}
+	});
+	
+	// op_lst li 클릭 시 "selected"클래스 추가
+	$('.op_lst li').bind('touchstart click',function(e){
+		e.preventDefault();		
 		
-
-		<!-- js -->
-		<script src="./asset/js/jquery-1.11.3.min.js"></script>
-		<script src="./asset/js/swiper.jquery.min.js"></script>
-		<script src="./asset/js/ui-library.js"></script>
-		<script src="./asset/js/ui-common.js"></script>
-
-
+		$(this).addClass('selected').siblings().removeClass('selected');
+		$('.op_lb').next().slideUp('fast').prev().removeClass('open');
 		
+		step1DropDownSelected($(this));		
+	});	
 
-	</head>
-	<body>
-		<div id="booktalk">
-			<header class="header">
-				<div class="header-top">
-					<div class="inner">
-						<h1>
-							<a href="http://booktalk.world" data-ajax="false">
-								<img src="./asset/images/logo_mobile.png" alt="BOOKtalk" class="mo">
-								<img src="./asset/images/logo.jpg" alt="BOOKtalk" class="pc">
-							</a>
-						</h1>
-						<div class="header-search">
-							<div class="header-btn-left btn-forward"><a href="#" ></a></div>
-							<div class="frm-search-area">
-								<form id="form-search-global" action="http://booktalk.world/mobile/book/search.php" data-ajax="false">
-									<div class="frm-search">
-										<input type="text" name="glk" id="glk" placeholder="검색어 입력" value="">
-									</div>
-									<button type="submit" class="search">search</button>
-								</form>
-							</div>
-						</div>
-						<a href="#overlayPanel" class="btn-menu"></a>
-						<span class="btn-search"></span>
-						<a href="#overlayPanel" class="btn-mypage">내 정보</a>
-						<a href="#overlayPanel" class="btn-cart">장바구니<i>123</i></a>
+}
 
-						<div class="btn-mypage-login">
-							<p class="pic" style="background:url(http://cphoto.asiae.co.kr/listimglink/6/2017032810130486033_1.jpg) no-repeat 50% 50%;background-size:cover;">내사진</p>
-							<div class="layer-my">
-								<p class="name"><strong>닉네임은이곳에</strong>님</p>
-								<ul>
-									<li><a href="">내 서제<strong>257</strong></a></li>
-									<li><a href="#">주문<strong>257</strong></a></li>
-									<li><a href="#">위시 리스트<strong>257</strong></a></li>
-									<li><a href="#">친구<strong>257</strong></a></li>
-								</ul>
-								<a href="" class="logout">로그아웃</a>
-								<a href="" class="bookmark">즐겨찾기 게시글</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="navbar-item">
-					<div class="inner">
-						<ul>
-							<li class="item01"><a href="http://booktalk.world/mobile/book/today_new.php" data-ajax="false" ><h2>NEWS</h2></a></li>
-							<li class="item02"><a href="http://booktalk.world/mobile/book/best_steady.php" data-ajax="false" ><h2>BOOKS</h2></a></li>
-							<li class="item03"><a href="http://booktalk.world/mobile/book/recommand.php" data-ajax="false" ><h2>COMMUNITY</h2></a></li>
-						</ul>
-						<menu>
-							<div class="list">
-								<h2><a href="#">NEWS</a></h2>
-								<ul>
-									<li><a href="#">종합</a></li>
-									<li><a href="#">Marvel Comics</a></li>
-									<li><a href="#">DC Comics</a></li>
-									<li><a href="#">Image Comics</a></li>
-								</ul>
-							</div>
-							<div class="list">
-								<h2><a href="#">BOOKS</a></h2>
-								<ul>
-									<li><a href="#">신간</a></li>
-									<li><a href="#">베스트</a></li>
-									<li><a href="#">브랜드별</a></li>
-									<li><a href="#">추천</a></li>
-								</ul>
-							</div>
-							<div class="list">
-								<h2><a href="#">COMMUNITY</a></h2>
-								<ul>
-									<li><a href="#">Marvel Comics</a></li>
-									<li><a href="#">DC Comics</a></li>
-									<li><a href="#">Image Comics</a></li>
-								</ul>
-							</div>
-							<div class="list">
-								<h2><a href="#">고객센터</a></h2>
-								<ul>
-									<li><a href="#">고객센터 안내</a></li>
-									<li><a href="#">공지사항</a></li>
-									<li><a href="#">자주 묻는 질문</a></li>
-									<li><a href="#">1:1 문의</a></li>
-									<li><a href="#">도서 신청</a></li>
-									<li><a href="#">건의사항</a></li>
-								</ul>
-							</div>
-						</menu>
-						<p class="add">
-							<a href="#">신간</a>
-							<a href="#">베스트</a>
-							<a href="#">추천</a>
-						</p>
-					</div>
-				</div>
-				
-			</header>
-			
-			<div class="content main">
+</script>
+</head>
+<body>
+<div id="wrap" class="vip">
+	<div id="header">
+		<h1 class="blind">VIP 이벤트 상세페이지</h1>
+	</div>
 
-				<div class="slide-banner">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide" style="background:#000 url(./asset/images/temp/main_slide01_pc.jpg) no-repeat 50% 50%;">
-								<a href="https://www.sigongsa.com/comics/comicsMain.php" target="_blank" data-title="북토크1">
-									<img src="./asset/images/temp/main_slide01_mo.jpg" title="">
-								</a>
-							</div>
-							<div class="swiper-slide" style="background:#000 url(./asset/images/temp/main_slide01_pc.jpg) no-repeat 50% 50%;">
-								<a href="https://www.sigongsa.com/comics/comicsMain.php" target="_blank" data-title="북토크1">
-									<img src="./asset/images/temp/main_slide01_mo.jpg" title="">
-								</a>
-							</div>
-							<div class="swiper-slide" style="background:#000 url(./asset/images/temp/main_slide01_pc.jpg) no-repeat 50% 50%;">
-								<a href="https://www.sigongsa.com/comics/comicsMain.php" target="_blank" data-title="북토크1">
-									<img src="./asset/images/temp/main_slide01_mo.jpg" title="">
-								</a>
-							</div>
-							<div class="swiper-slide" style="background:#000 url(./asset/images/temp/main_slide01_pc.jpg) no-repeat 50% 50%;">
-								<a href="https://www.sigongsa.com/comics/comicsMain.php" target="_blank" data-title="북토크1">
-									<img src="./asset/images/temp/main_slide01_mo.jpg" title="">
-								</a>
-							</div>
-							<div class="swiper-slide" style="background:#000 url(./asset/images/temp/main_slide01_pc.jpg) no-repeat 50% 50%;">
-								<a href="https://www.sigongsa.com/comics/comicsMain.php" target="_blank" data-title="북토크1">
-									<img src="./asset/images/temp/main_slide01_mo.jpg" title="">
-								</a>
-							</div>
-						</div>
+	<div id="bottom">						
+		<!-- 프라이빗 이벤트 인 경우 중복 신청 가능 -->
+		<!-- 프라이빗이벤트 -->
+		<button id="btm_apply" class="btn btm_r on" onclick="javascript:reqEventPopNew(false);"><span>신청</span></button>
+		<button id="btm_back" class="btn btm_back" onclick="fnGoList();"><span>뒤로가기</span></button>
+		<button id="btm_home" class="btn btm_home" onclick="fnGoHome();"><span>홈</span></button>
+		<!-- 
+		[D] 우측에 위치하는 신청/확인 버튼은
+		필수 입력값 입력 여부/신청 가능 여부에 따라 on클래스가 붙는다
+		-->
+	</div>
+	<div id="dim" style="overflow:hidden;position:absolute;left:0;top:0;z-index:10;width:100%;height:100%;background:#000;opacity:.70;display:none;">
+	</div>	
+</div>
 
-						<div class="swiper-pagination"></div>
-
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-						<script type="text/javascript">
-							var swiperMainSlider = new Swiper('.slide-banner .swiper-container', {
-								pagination: '.slide-banner .swiper-pagination',
-								nextButton: '.slide-banner .swiper-button-next',
-								prevButton: '.slide-banner .swiper-button-prev',
-								slidesPerView: 1,
-								paginationClickable: true,
-								spaceBetween: 0,
-								loop: true
-							});
-							function slideTab(){
-								//슬라이드 탭 메뉴 생성
-								var slideIndexArray = new Array();
-								$(".slide-banner .swiper-slide").each(function(index) {
-									var slideIndex = $(this).data("swiper-slide-index");
-									slideIndexArray.push(slideIndex)
-									var slideTitle = $(this).find("a").data("title");
-									$(".slide-banner .swiper-pagination-bullet:eq("+slideIndex+")").html("<p>"+slideTitle+"</p>");
-								});
-								var slideIndexMax = Math.max.apply(null, slideIndexArray);
-								$(".slide-banner").addClass("slideIndex"+(slideIndexMax+1));
-							}
-							$(document).ready(function() {
-								slideTab();
-							});
-							$(window).resize(function(){
-								setTimeout(function() {
-									slideTab();
-								}, 10);
-							});
-						</script>
-					</div>
-				</div>
-
-				<div id="notice01" class="notice">
-					<div class="inner">
-						<h3>공지사항</h3>
-						<div class="swiper-container">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요1 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요2 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요3 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요4 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요5 <span class="date">2017-09-15</span></a></div>
-							</div>
-							<div class="swiper-pagination"></div>
-						</div>
-						<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
-					</div>
-				</div>
-				<script type="text/javascript">
-					var swiperNotice02 = new Swiper("#notice01 .swiper-container", {
-						pagination: "#notice01 .swiper-pagination",
-						slidesPerView: 1,
-						paginationClickable: true,
-						spaceBetween: 0,
-						loop: true,
-						autoplay: 4000
-					});
-				</script>
-
-				<div class="news">
-					<h3>뉴스</h3>
-					<div class="tabbox">
-						<ul class="tab">
-							<li><a href="#tabboxcon10">종합</a></li>
-							<li><a href="#tabboxcon11">MARVEL Comics</a></li>
-							<li><a href="#tabboxcon12">DC Comics</a></li>
-							<li><a href="#tabboxcon13">Image Comics</a></li>
-						</ul>
-					</div>
-					<div id="tabboxcon10" class="tabboxcon">
-						<ul class="list">
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="txt">2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기</p>
-									<p class="writer">By 북토크, 10분 전</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="txt">2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기</p>
-									<p class="writer">By 북토크, 10분 전</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>북미 개봉일을 정한 퍼시픽 림</p>
-									<p class="txt">2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div id="tabboxcon11" class="tabboxcon">
-						<ul class="list">
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="txt">2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기</p>
-									<p class="writer">By 북토크, 10분 전</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="txt">2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기</p>
-									<p class="writer">By 북토크, 10분 전</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>북미 개봉일을 정한 퍼시픽 림</p>
-									<p class="txt">2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기2018년 2월 13일에서 3월 13일로 무기한 연기</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div id="tabboxcon12" class="tabboxcon">
-						2
-					</div>
-					<div id="tabboxcon13" class="tabboxcon">
-						3
-					</div>
-					<a href="#btn-prev" class="btn-prev">이전</a>
-					<a href="#btn-next" class="btn-next">다음</a>
-					<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
-				</div>
-				<script type="text/javascript">
-					var newsTab = new FG_tabContent($('.news .tabbox'));
-					newsTab._load();
-				</script>
-
-				<div class="newbook">
-					<h3>신간</h3>
-					<div class="tabbox">
-						<a href="#" class="add">신간바로가기</a>
-						<ul class="tab">
-							<li><a href="#tabboxcon20">종합</a></li>
-							<li><a href="#tabboxcon21">MARVEL Comics</a></li>
-							<li><a href="#tabboxcon22">DC Comics</a></li>
-							<li><a href="#tabboxcon23">Image Comics</a></li>
-						</ul>
-					</div>
-					<div id="tabboxcon20" class="tabboxcon">
-						<ul class="list">
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-									<p class="writer">By 북토크, 10분 전</p>
-									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div id="tabboxcon21" class="tabboxcon">
-						1
-					</div>
-					<div id="tabboxcon22" class="tabboxcon">
-						2
-					</div>
-					<div id="tabboxcon23" class="tabboxcon">
-						3
-					</div>
-					<a href="#btn-prev" class="btn-prev">이전</a>
-					<a href="#btn-next" class="btn-next">다음</a>
-					<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
-				</div>
-				<script type="text/javascript">
-					var newbookTab = new FG_tabContent($('.newbook .tabbox'));
-					newbookTab._load();
-				</script>
-
-
-
-				<div class="popular">
-					<h3>오늘 화재의 글</h3>
-					<div class="tabbox">
-						<ul class="tab">
-							<li><a href="#tabboxcon30">종합</a></li>
-							<li><a href="#tabboxcon31">MARVEL Comics</a></li>
-							<li><a href="#tabboxcon32">DC Comics</a></li>
-							<li><a href="#tabboxcon33">Image Comics</a></li>
-						</ul>
-					</div>
-					<div id="tabboxcon30" class="tabboxcon">
-						<ul class="list">
-							<li>
-								<a href="">
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="date">2017-09-10</p>
-									<p class="category">DC</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="date">2017-09-10</p>
-									<p class="category">DC</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="date">2017-09-10</p>
-									<p class="category">DC</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="date">2017-09-10</p>
-									<p class="category">DC</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<p class="title"><strong><샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.<샤잠>은 기존의 DC 확장 유니버스의 영화들과는 달리 밝고 유쾌할 것입니다.</strong></p>
-									<p class="date">2017-09-10</p>
-									<p class="category">DC</p>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div id="tabboxcon31" class="tabboxcon">
-						1
-					</div>
-					<div id="tabboxcon32" class="tabboxcon">
-						2
-					</div>
-					<div id="tabboxcon33" class="tabboxcon">
-						3
-					</div>
-					<a href="#btn-prev" class="btn-prev">이전</a>
-					<a href="#btn-next" class="btn-next">다음</a>
-					<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
-				</div>
-				<script type="text/javascript">
-					var popularTab = new FG_tabContent($('.popular .tabbox'));
-					popularTab._load();
-				</script>
-
-			</div>
-			<!-- main End -->
-			
-			<footer class="footer">
-				<div id="notice02" class="notice">
-					<div class="inner">
-						<h3>공지사항</h3>
-						<div class="swiper-container">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요1 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요2 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요3 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요4 <span class="date">2017-09-15</span></a></div>
-								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요5 <span class="date">2017-09-15</span></a></div>
-							</div>
-							<div class="swiper-pagination"></div>
-						</div>
-						<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
-					</div>
-				</div>
-				<script type="text/javascript">
-					var swiperNotice02 = new Swiper("#notice02 .swiper-container", {
-						pagination: "#notice02 .swiper-pagination",
-						slidesPerView: 1,
-						paginationClickable: true,
-						spaceBetween: 0,
-						loop: true,
-						autoplay: 4000
-					});
-				</script>
-				<div class="util">
-					<div class="inner">
-						<a href="#">로그인</a>
-						<a href="#">주문 배송</a>
-						<a href="#">고객 센터</a>
-					</div>
-				</div>
-				<p class="customer">고객센터 <a href="#">000-000</a></p>
-				<address>
-					㈜비콘 | 대표 박북톡 | 서울특별시 마포구 월드컵북로 396 누리꿈스퀘어 비즈타워 1103호<br />
-					사업자등록번호 000-00-00000<br />
-					통신판매업신고 제 0000-서울00 00-00000호<br />
-					개인정보보호 책임 <a href="mailto:">admin@booktalk.co.kr</a>
-					<p class="agree">
-						<a href="#">이용약관</a>
-						<a href="#">개인정보처리방침</a>
-						<a href="#">청소년보호정책</a>
-						<a href="#">사업자 정보 확인</a>
-					</p>
-					<p class="copyright"><em>©</em>BOOKTALK Corp.</p>
-				</address>
-
-			</footer>
-			
-			<div class="quick-menu-side">
-				<h3>최근 본 상품</h3>
-				<div class="lately">
-					<div class="product">
-						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
-						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
-						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
-						<a href="/product/product?prodNo=COM0010923" style="background:url(http://cfile27.uf.tistory.com/image/2471C43C563230F60AA66C) no-repeat 50% 50%;background-size:cover;">상품이름</a>
-					</div>
-				</div>
-				<a href="#" class="btn-cart">장바구니</a>
-			</div>
-			<script type="text/javascript">
-				$(".quick-menu-side .lately").pajinate({items_per_page: 2});
-
-				//사이드 퀵메뉴
-				var target = $(".quick-menu-side").offset().top-30;
-				function fixQuick() {
-					if ($(window).scrollTop() > target){
-						$(".quick-menu-side").addClass("active");
-					}else {
-						$(".quick-menu-side").removeClass("active");
-					}
-				}
-				$(window).scroll(fixQuick);
-			</script>
-		</div>
-	</body>
+</body>
 </html>
