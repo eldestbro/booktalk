@@ -35,41 +35,36 @@
 						<li><a href="#tabboxcon12">Image</a></li>
 					</ul>
 				</div>
-				<div id="tabboxcon10" class="tabboxcon">
-					<div class="menu">
-						<select style="width:100px;">
-							<option>기본</option>
-							<option>옵션 1</option>
-							<option>옵션 2</option>
-							<option>옵션 3</option>
-						</select>
-						<a href="#" class="btn-all">전체보기</a>
-						<a href="#" class="btn-like">추천글</a>
-						<a href="#" class="btn-write">글쓰기</a>
+				<div class="board-view">
+					<p class="title">가디언즈 오브 갤럭시 Vol. 1은... 갓만화 ㅇㅈㅇㅈ... ㅇㅈ?</p>
+					<div class="info">
+						<div class="thumb">xxx님 프로필 사진</div>
+						<ul>
+							<li><strong>작성자</strong>닉네임을잘만들었다</li>
+							<li><strong>작성일</strong>2017-10-26<span>10:26:27</span></li>
+							<li><strong>댓글</strong>300</li>
+							<li><strong>조회</strong>300</li>
+						</ul>
 					</div>
-					<div class="board-list">
-						<table>
-							<thead>
-								<tr>
-									<th scope="col">번호</th>
-									<th scope="col">제목</th>
-									<th scope="col">닉네임</th>
-									<th scope="col">작성일</th>
-									<th scope="col">조회</th>
-									<th scope="col">추천</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>[점검] 11월 10일 23:00 ~ 24:00 점검 관계로 일부 서비스 제한 안내</td>
-									<td>닉네임을잘만들었다</td>
-									<td>2017-09-10</td>
-									<td>3000</td>
-									<td>3000</td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="view-body">
+						
+					</div>
+					<div class="recommend">
+						<div class="amount">25</div>
+						<a href="" class="btn">글 추천</a>
+					</div>
+					<div class="reply">
+						<ul>
+							<li>
+								<div class="info">
+									<p class="name">나</p>
+									<p class="date"><strong>2017-10-25 </strong>09:22:04</p>
+								</div>
+								배트맨 아직 한 편도 안 봤는데...
+								이 작품은 왠지 좀 기대 됨. 재미 없으면 안 되는데 ㅋㅋㅋ
+								<a href="" class="btn-del">삭제</a>
+							</li>
+						</ul>
 					</div>
 					<!-- paginate -->
 					<div class="paginate">
@@ -89,23 +84,14 @@
 						<a href="#" class="btn btn_next">다음</a>
 					</div>
 					<!-- //paginate -->
-					<div class="form-search">
-						<form action="">
-							<select name="" id="">
-								<option value=""></option>
-							</select>
-							<div class="search">
-								<input type="text" />
-								<button type="submit" title="검색">검색</button>
-							</div>
-						</form>
+					<div class="write">
+						<textarea placeholder="욕설, 도배 등 다른 사용자에게 피해를 주는 댓글은 사전예고 없이 숨김 처리 됩니다."></textarea>
+						<a href="" class="btn-register">등록</a>
+						<a href="" class="btn-del">취소</a>
 					</div>
 				</div>
+				<a href="" class="btn-list">목록 보기</a>
 			</div>
-			<script type="text/javascript">
-				var communityTab = new FG_tabContent($('.community .tabbox'));
-				communityTab._load();
-			</script>
 		</div>
 	</body>
 </html>
