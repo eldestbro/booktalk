@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="description" content="전자책, 소설리딩, 커뮤니티, 전문가">
+		<title>BOOK talk</title>
+		<!-- css -->
+		<link rel="stylesheet" href="./asset/css/common.css">
+
+		<!-- js -->
+		<script src="https://www.ildongshop.com/w/js/jquery-1.11.3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<script src="https://www.ildongshop.com/w/js/ui-library.js"></script>
+		<script src="http://www.genie.co.kr/resources/commons/jscript/front.common.js?v=201708211439"></script>
+
+
+		
+
+	</head>
+	<body>
+		<div id="booktalk">
+			
+			<div class="content mypage">
+				<h2>My Page</h2>
+				<div class="side-menu">
+					<dl>
+						<dt><a href="#">내 서재</a></dt>
+						<dd>
+							<a href="#">구매 목록</a>
+							<a href="#">읽은 책</a>
+							<a href="#">위시 리스트</a>
+						</dd>
+						<dt><a href="#">주문 관리</a></dt>
+						<dd>
+							<a href="#">주문ㆍ배송 조회</a>
+							<a href="#">취소ㆍ교환 내역</a>
+							<a href="#">환불ㆍ입금 내역</a>
+						</dd>
+						<dt><a href="#">캐시 관리</a></dt>
+						<dd>
+							<a href="#">북토크 캐시</a>
+							<a href="#">북토크 포인트</a>
+							<a href="#">북토크 쿠폰</a>
+						</dd>
+						<dt><a href="#">북마크 게시글</a></dt>
+						<dd></dd>
+						<dt><a href="#">회원 정보</a></dt>
+						<dd>
+							<a href="#">회원 정보 변경</a>
+							<a href="#">내 기기 관리</a>
+						</dd>
+					</dl>
+				</div>
+
+				<div class="title">
+					<h3>캐시 관리</h3>
+					<h4>북토크 쿠폰</h4>
+				</div>
+
+				<div class="booktalkcoupon">
+					<p>쿠폰 번호를 입력하세요.</p>
+					쿠폰 번호 입력 후 등록하기 버튼 클릭 시<br />
+					즉시 사용 가능한 쿠폰이 등록됩니다.
+					<div class="coupon-register">
+						<input type="number" placeholder="일련번호 20자리를 ‘-’ 없이 입력하세요." />
+						<a href="#" class="btn-register">등록</a>
+						<ul class="guide">
+							<li>쿠폰 등록 후 아래의 ‘보유 쿠폰’에서 사용 조건, 기간 등을 확인하세요.</li>
+							<li>쿠폰은 등록 후 즉시 사용 가능합니다.</li>
+							<li>알파벳과 숫자를 명확히 구분하여 입력해 주세요.</li>
+							<li>쿠폰 등록 시 ‘-(하이픈)’은 생략하고 입력해 주세요.</li>
+						</ul>
+					</div>
+					<div class="list">
+						<div class="tabbox">
+							<ul class="tab">
+								<li><a href="#tabboxcon10">쿠폰 사용 내역</a></li>
+							</ul>
+							<p>환불 및 일반 문의는 ‘주문 관리’ 메뉴를 이용해 주시기 바랍니다.</p>
+						</div>
+						<div id="tabboxcon10" class="tabboxcon">
+							<div class="sort">
+								<select name="" id=""></select>
+								2017-09-20 ~ 2017-09-27
+							</div>
+							<dl>
+								<dt>
+									<strong>등록 날짜</strong>2017-10-25 15:25
+									<strong>만료일</strong>2018-10-25 00:00(자정)</dt>
+								<dd>
+									<p class="title">추석 특집 쿠폰<strong>구매 금액의 10% 할인</strong></p>
+									<div class="state">적립</div>
+								</dd>
+							</dl>
+							<dl class="used">
+								<dt>
+									<strong>등록 날짜</strong>2017-10-25 15:25
+									<strong>만료일</strong>2018-10-25 00:00(자정)</dt>
+								<dd>
+									<p class="title">추석 특집 쿠폰<strong>구매 금액의 10% 할인</strong></p>
+									<div class="state">만료</div>
+								</dd>
+							</dl>
+							<!-- paginate -->
+							<div class="paginate">
+								<a href="#" class="btn btn_prev">이전</a>
+								<span class="num">
+									<a href="#" class="active">1</a>
+									<a href="#">2</a>
+									<a href="#">3</a>
+									<a href="#">4</a>
+									<a href="#">5</a>
+									<a href="#">6</a>
+									<a href="#">7</a>
+									<a href="#">8</a>
+									<a href="#">9</a>
+									<a href="#">10</a>
+								</span>
+								<a href="#" class="btn btn_next">다음</a>
+							</div>
+							<!-- //paginate -->
+						</div>
+						<script type="text/javascript">
+							var booktalkcouponTab = new FG_tabContent($('.booktalkcoupon .list .tabbox'));
+							booktalkcouponTab._load();
+						</script>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+</html>
