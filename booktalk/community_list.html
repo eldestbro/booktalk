@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="description" content="전자책, 소설리딩, 커뮤니티, 전문가">
+		<title>BOOK talk</title>
+		<!-- css -->
+		<link rel="stylesheet" href="./asset/css/common.css">
+
+		<!-- js -->
+		<script src="https://www.ildongshop.com/w/js/jquery-1.11.3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<script src="https://www.ildongshop.com/w/js/ui-library.js"></script>
+		<script src="http://ildong.pjtstone.com/w/js/ui-common.js"></script>
+		
+		<script src="http://www.genie.co.kr/resources/commons/jscript/front.common.js?v=201708211439"></script>
+
+
+		
+
+	</head>
+	<body>
+		<div id="booktalk">
+			
+			<div class="content community">
+				<h2>Community</h2>
+				<div class="tabbox">
+					<ul class="tab">
+						<li><a href="#tabboxcon10">Marvel</a></li>
+						<li><a href="#tabboxcon11">DC</a></li>
+						<li><a href="#tabboxcon12">Image</a></li>
+					</ul>
+				</div>
+				<div id="tabboxcon10" class="tabboxcon">
+					<div class="menu">
+						<select style="width:100px;">
+							<option>기본</option>
+							<option>옵션 1</option>
+							<option>옵션 2</option>
+							<option>옵션 3</option>
+						</select>
+						<a href="#" class="btn-all">전체보기</a>
+						<a href="#" class="btn-like">추천글</a>
+						<a href="#" class="btn-write">글쓰기</a>
+					</div>
+					<div class="board-list">
+						<table>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">닉네임</th>
+									<th scope="col">작성일</th>
+									<th scope="col">조회</th>
+									<th scope="col">추천</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>[점검] 11월 10일 23:00 ~ 24:00 점검 관계로 일부 서비스 제한 안내</td>
+									<td>닉네임을잘만들었다</td>
+									<td>2017-09-10</td>
+									<td>3000</td>
+									<td>3000</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- paginate -->
+					<div class="paginate">
+						<a href="#" class="btn btn_prev">이전</a>
+						<span class="num">
+							<a href="#" class="active">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>
+						</span>
+						<a href="#" class="btn btn_next">다음</a>
+					</div>
+					<!-- //paginate -->
+					<div class="form-search">
+						<form action="">
+							<select name="" id="">
+								<option value=""></option>
+							</select>
+							<div class="search">
+								<input type="text" />
+								<button type="submit" title="검색">검색</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				var communityTab = new FG_tabContent($('.community .tabbox'));
+				communityTab._load();
+			</script>
+		</div>
+	</body>
+</html>
