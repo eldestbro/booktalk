@@ -2,30 +2,28 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		
+
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<meta name="description" content="전자책, 소설리딩, 커뮤니티, 전문가">
 		<title>BOOK talk</title>
 		<!-- css -->
 		<link rel="stylesheet" href="./asset/css/common.css">
-		
-		
+
 
 		<!-- js -->
-		<script src="https://www.ildongshop.com/w/js/jquery-1.11.3.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		
-		<script src="https://www.ildongshop.com/w/js/ui-library.js"></script>
-		<script src="http://www.genie.co.kr/resources/commons/jscript/front.common.js?v=201708211439"></script>
+		<script src="./asset/js/jquery-1.11.3.min.js"></script>
+		<script src="./asset/js/swiper.jquery.min.js"></script>
+		<script src="./asset/js/ui-library.js"></script>
+		<script src="./asset/js/ui-common.js"></script>
 
 
-		
+
 
 	</head>
 	<body>
 		<div id="booktalk">
-			
+
+			<link rel="stylesheet" href="./asset/css/book.css">
 			<div class="content book">
 
 				<div class="slide-banner">
@@ -111,49 +109,51 @@
 						</div>
 						<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
 					</div>
+					<script type="text/javascript">
+						var swiperNotice01 = new Swiper("#notice01 .swiper-container", {
+							pagination: "#notice01 .swiper-pagination",
+							slidesPerView: 1,
+							paginationClickable: true,
+							spaceBetween: 0,
+							loop: true,
+							autoplay: 4000
+						});
+					</script>
 				</div>
-				<script type="text/javascript">
-					var swiperNotice02 = new Swiper("#notice01 .swiper-container", {
-						pagination: "#notice01 .swiper-pagination",
-						slidesPerView: 1,
-						paginationClickable: true,
-						spaceBetween: 0,
-						loop: true,
-						autoplay: 4000
-					});
-				</script>
+
+				<h2>books</h2>
 
 				<div class="books">
-					<h3>books</h3>
 					<div class="tabbox">
 						<ul class="tab">
 							<li><a href="#tabboxcon10">홈</a></li>
 							<li><a href="#tabboxcon11">신간</a></li>
 							<li><a href="#tabboxcon12">베스트</a></li>
 							<li><a href="#tabboxcon13">브랜드별</a></li>
-							<li><a href="#tabboxcon13">추천</a></li>
-							<li><a href="#tabboxcon13">eBook</a></li>
+							<li><a href="#tabboxcon14">추천</a></li>
 						</ul>
+						<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
 					</div>
 					<div id="tabboxcon10" class="tabboxcon">
 						<ul class="list">
 							<li>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-								<p class="txt">"스파이더맨의 새로운 흥행을 알리는 시리즈가 될 것!"</p>
-								<p class="title">스파이더맨의 모든 것</p>
-								<p class="writer">J. 마이클 스트라진스키, 존 로미타 주니어, 스콧한나</p>
+								<div class="recommend">추천</div>
+								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<p class="txt">"스파이더맨의 새로운 흥행을 알리는 시리즈가 될 것스파이더맨의 새로운 흥행을 알리는 시리즈가 될 것스파이더맨의 새로운 흥행을 알리는 시리즈가 될 것스파이더맨의 새로운 흥행을 알리는 시리즈가 될 것!"</p>
+								<p class="title">스파이더맨의 모든 것스파이더맨의 모든 것스파이더맨의 모든 것스파이더맨의 모든 것스파이더맨의 모든 것</p>
+								<p class="writer">J. 마이클 스트라진스키, 존 로미타 주니어, 스콧한J. 마이클 스트라진스키, 존 로미타 주니어, 스콧한J. 마이클 스트라진스키, 존 로미타 주니어, 스콧한J. 마이클 스트라진스키, 존 로미타 주니어, 스콧한나</p>
 								<p class="category">시공사, 액션</p>
 								<p class="description">
 									복제인간은 SF물에서 즐겨쓰는 소재 중의 하나죠. 몇 년 전만해도 정말 공상과학에서나 가능할거라고 생각한 이야기들이 이제는 현실이 되는 모습을보면. 앞으로 또 10년 후에는 어떤 놀라운 일들이 가능하게 될까도 궁금하고. 또 정말 영화 속에서 벌어지는 일들이 실제로 일어날 것 같아 무섭기도 합니다. 이 놀라운 과학이 실현된다는데 반가움보다 무서움을 먼저 느끼는 내 자신을 보면서 이런 생각을 합니다. '우린 금단의 영역을 건드리고 있는 것인지도 몰라'. 태초에 아담과 이브가 선악과를 따먹을 때 신은 이렇게 경고를 했었죠. '그것을 먹으면 너희는 죽을 것이다' 그리고 뱀은 이렇게 말하죠. '그것을 먹으면 너흰 지혜로와질 것이다.' 그러니까 '지혜를 얻을 순 있으나 우리를 죽게 하는 것' 그것이 금단의 열매죠. 생명공학이란 것이 갖고 있는 빛과 어둠이 바로 이것이 아닐까요. 우리에게 '지혜'를 주지만 결국 우리를 '죽게'하는 것 말이죠. 과학기술은 인간을 불편함에서 자유롭게 해주었지만 동시에 자연으로부터 우리를 격리시켰습니다. 핸드폰 없이 컴퓨터 없이 살 수 있을까요. 사람은 과학기술때문에 자유로와졌지만 동시에 구속된거죠.
 								</p>
-								<div class="score-area">
-									<strong>독자 평점</strong>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
+								<div class="set">
+									포함된 책
+									<strong>1권</strong>
 								</div>
 								<a href="#" class="btn-view">보러 가기</a>
 							</li>
-							<li>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+							<li class="recommend">
+								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170833/1502957200-17021900_878391083.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
 								<p class="txt">"스파이더맨의 새로운 흥행을 알리는 시리즈가 될 것!"</p>
 								<p class="title">스파이더맨의 모든 것</p>
 								<p class="writer">J. 마이클 스트라진스키, 존 로미타 주니어, 스콧한나</p>
@@ -161,9 +161,9 @@
 								<p class="description">
 									복제인간은 SF물에서 즐겨쓰는 소재 중의 하나죠. 몇 년 전만해도 정말 공상과학에서나 가능할거라고 생각한 이야기들이 이제는 현실이 되는 모습을보면. 앞으로 또 10년 후에는 어떤 놀라운 일들이 가능하게 될까도 궁금하고. 또 정말 영화 속에서 벌어지는 일들이 실제로 일어날 것 같아 무섭기도 합니다. 이 놀라운 과학이 실현된다는데 반가움보다 무서움을 먼저 느끼는 내 자신을 보면서 이런 생각을 합니다. '우린 금단의 영역을 건드리고 있는 것인지도 몰라'. 태초에 아담과 이브가 선악과를 따먹을 때 신은 이렇게 경고를 했었죠. '그것을 먹으면 너희는 죽을 것이다' 그리고 뱀은 이렇게 말하죠. '그것을 먹으면 너흰 지혜로와질 것이다.' 그러니까 '지혜를 얻을 순 있으나 우리를 죽게 하는 것' 그것이 금단의 열매죠. 생명공학이란 것이 갖고 있는 빛과 어둠이 바로 이것이 아닐까요. 우리에게 '지혜'를 주지만 결국 우리를 '죽게'하는 것 말이죠. 과학기술은 인간을 불편함에서 자유롭게 해주었지만 동시에 자연으로부터 우리를 격리시켰습니다. 핸드폰 없이 컴퓨터 없이 살 수 있을까요. 사람은 과학기술때문에 자유로와졌지만 동시에 구속된거죠.
 								</p>
-								<div class="score-area">
-									<strong>독자 평점</strong>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
+								<div class="set">
+									포함된 책
+									<strong>1권</strong>
 								</div>
 								<a href="#" class="btn-view">보러 가기</a>
 							</li>
@@ -178,105 +178,225 @@
 					<div id="tabboxcon13" class="tabboxcon">
 						3
 					</div>
+					<div id="tabboxcon14" class="tabboxcon">
+						3
+					</div>
+					<script type="text/javascript">
+						var booksTab = new FG_tabContent($('.books .tabbox'));
+						booksTab._load();
+					</script>
 				</div>
-				<script type="text/javascript">
-					var booksTab = new FG_tabContent($('.books .tabbox'));
-					booksTab._load();
-				</script>
 
-				<div class="bestseller">
+				<div class="book-ranking">
 					<div class="list-title">
-						<h3>북토크 베스트 셀러</h3>북토크의 베스트셀러 순위는 매달 1일 업데이트 됩니다.
+						<h3>북토크 베스트 셀러</h3>북토크의 베스트셀러 순위는 매주 업데이트 됩니다.
 					</div>
 					<ol class="list">
-						<li>
+						<li class="rank01">
 							<a href="">
 								<div class="rank">1</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-ebook">e book</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank02">
 							<a href="">
 								<div class="rank">2</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank03">
 							<a href="">
 								<div class="rank">3</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank04">
 							<a href="">
 								<div class="rank">4</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank05">
 							<a href="">
 								<div class="rank">5</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:40%;">2점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank06">
 							<a href="">
 								<div class="rank">6</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:40%;">2점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank07">
 							<a href="">
 								<div class="rank">7</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-all">all</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:40%;">2점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank08">
 							<a href="">
 								<div class="rank">8</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-all">all</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:80%;">4점</strong></p>
 							</a>
 						</li>
-						<li>
+						<li class="rank09">
 							<a href="">
 								<div class="rank">9</div>
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-all">all</div>
 								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
+								<p class="score-03"><strong style="width:80%;">4점</strong></p>
+							</a>
+						</li>
+					</ol>
+					<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
+				</div>
+
+				<div class="book-ranking">
+					<div class="list-title">
+						<h3>북토크 독자 평점 랭킹</h3>북토크의 독자 평점 랭킹은 최근 1개월 사이의 데이터를 바탕으로 정해집니다.
+					</div>
+					<ol class="list">
+						<li class="rank01">
+							<a href="">
+								<div class="rank">1</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-ebook">e book</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
+							</a>
+						</li>
+						<li class="rank02">
+							<a href="">
+								<div class="rank">2</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
+							</a>
+						</li>
+						<li class="rank03">
+							<a href="">
+								<div class="rank">3</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
+							</a>
+						</li>
+						<li class="rank04">
+							<a href="">
+								<div class="rank">4</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:20%;">1점</strong></p>
+							</a>
+						</li>
+						<li class="rank05">
+							<a href="">
+								<div class="rank">5</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:40%;">2점</strong></p>
+							</a>
+						</li>
+						<li class="rank06">
+							<a href="">
+								<div class="rank">6</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-paperbook">paper book</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:40%;">2점</strong></p>
+							</a>
+						</li>
+						<li class="rank07">
+							<a href="">
+								<div class="rank">7</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-all">all</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:40%;">2점</strong></p>
+							</a>
+						</li>
+						<li class="rank08">
+							<a href="">
+								<div class="rank">8</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-all">all</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:80%;">4점</strong></p>
+							</a>
+						</li>
+						<li class="rank09">
+							<a href="">
+								<div class="rank">9</div>
+								<div class="thumb" style="background:url(http://www.samsung.com/sec/shop/event/starwars_edition/img/img_kv_powergun.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+								<div class="class-all">all</div>
+								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
+								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+								<p class="category">시공사,액션</p>
+								<p class="score-03"><strong style="width:80%;">4점</strong></p>
 							</a>
 						</li>
 					</ol>
@@ -289,14 +409,13 @@
 						<div class="inner">
 							<div class="main-clip">
 								<div class="player">
-									
+
 								</div>
 								<div class="info">
 									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
 									<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
 									<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
 									<p class="category">시공사,액션</p>
-									<p class="score"><strong style="width:80%;">4점</strong></p>
 								</div>
 							</div>
 							<ul class="list">

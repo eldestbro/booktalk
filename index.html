@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		
+
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<meta name="description" content="전자책, 소설리딩, 커뮤니티, 전문가">
 		<title>BOOK talk</title>
 		<!-- css -->
 		<link rel="stylesheet" href="./asset/css/common.css">
-		
+
 
 		<!-- js -->
 		<script src="./asset/js/jquery-1.11.3.min.js"></script>
@@ -17,7 +17,7 @@
 		<script src="./asset/js/ui-common.js"></script>
 
 
-		
+
 
 	</head>
 	<body>
@@ -26,7 +26,7 @@
 				<div class="header-top">
 					<div class="inner">
 						<h1>
-							<a href="http://booktalk.world" data-ajax="false">
+							<a href="http://booktalk.world">
 								<img src="./asset/images/logo_mobile.png" alt="BOOKtalk" class="mo">
 								<img src="./asset/images/logo.jpg" alt="BOOKtalk" class="pc">
 							</a>
@@ -117,7 +117,7 @@
 						</p>
 					</div>
 				</div>
-				
+
 			</header>
 
 			<div id="login" class="login">
@@ -143,6 +143,7 @@
 				<a href="#" class="btn-close">로그인창 닫기</a>
 			</div>
 
+			<link rel="stylesheet" href="./asset/css/main.css">
 			<div class="content main">
 
 				<div class="slide-banner">
@@ -215,7 +216,7 @@
 
 				<div id="notice01" class="notice">
 					<div class="inner">
-						<h3>공지사항</h3>
+						<h3>NOTICE</h3>
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide"><a href="#">북토크가 론칭합니다! 다양한 론칭기념 이벤트와 경품을 지금 바로 확인하세요1 <span class="date">2017-09-15</span></a></div>
@@ -228,91 +229,154 @@
 						</div>
 						<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
 					</div>
+					<script type="text/javascript">
+						var swiperNotice01 = new Swiper("#notice01 .swiper-container", {
+							pagination: "#notice01 .swiper-pagination",
+							slidesPerView: 1,
+							paginationClickable: true,
+							spaceBetween: 0,
+							loop: true,
+							autoplay: 4000
+						});
+					</script>
 				</div>
-				<script type="text/javascript">
-					var swiperNotice02 = new Swiper("#notice01 .swiper-container", {
-						pagination: "#notice01 .swiper-pagination",
-						slidesPerView: 1,
-						paginationClickable: true,
-						spaceBetween: 0,
-						loop: true,
-						autoplay: 4000
-					});
-				</script>
 
 				<div class="news">
 					<h3>뉴스</h3>
 					<div class="tabbox">
-						<a href="#" class="add">뉴스바로가기</a>
+						<a href="#" class="add">뉴스 바로가기</a>
 						<ul class="tab">
-							<li><a href="#tabboxcon20">종합</a></li>
-							<li><a href="#tabboxcon21">MARVEL Comics</a></li>
-							<li><a href="#tabboxcon22">DC Comics</a></li>
-							<li><a href="#tabboxcon23">Image Comics</a></li>
+							<li><a href="#tabboxcon10">종합</a></li>
+							<li><a href="#tabboxcon11">MARVEL Comics</a></li>
+							<li><a href="#tabboxcon12">DC Comics</a></li>
+							<li><a href="#tabboxcon13">Image Comics</a></li>
 						</ul>
 					</div>
-					<div id="tabboxcon20" class="tabboxcon">
+					<div id="tabboxcon10" class="tabboxcon">
 						<ul class="list">
 							<li>
 								<a href="">
-									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-									<p class="category">뉴스 │ DC Comics</p>
-									<p class="title">
-										<strong>장대한 역사의 DC 코믹 유니버스를 한번에 알...</strong>
-										DC 코믹스 백과사전은 소개 글과 함께 DC의 히스토리를 간략하게 소개...
-									</p>
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<p class="category">뉴스<span>DC Comics</span></p>
+									<div class="title">
+										<strong>장대한 역사의 DC 코믹 유니버스를 한대한 역사의 DC 코믹 유니버스를 한대한 역사의 DC 코믹 유니버스를 한번에 알...</strong>
+										<p>
+											DC 코믹스 백과사전은 소개 글과 함께 DC의 히스토리를 백과사전은 소개 글과 함께 DC의 히스토리백과사전은 소개 글과 함께 DC의 히스토리백과사전은 소개 글과 함께 DC의 히스토리 소개...
+										</p>
+									</div>
 									<p class="writer">
-										<span class="writer-thumb"></span>By 북토크<span class="date">017.10.27</span>
+										<span class="writer-thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">북토크님 프로필 사진</span>By 북토크<span class="date">2017.10.27</span>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<p class="category">뉴스<span>DC Comics</span></p>
+									<div class="title">
+										<strong>장대한 역사의 DC 코믹 유니버스를 한대한 역사의 DC 코믹 유니버스를 한대한 역사의 DC 코믹 유니버스를 한번에 알...</strong>
+										<p>
+											DC 코믹스 백과사전은 소개 글과 함께 DC의 히스토리를 백과사전은 소개 글과 함께 DC의 히스토리백과사전은 소개 글과 함께 DC의 히스토리백과사전은 소개 글과 함께 DC의 히스토리 소개...
+										</p>
+									</div>
+									<p class="writer">
+										<span class="writer-thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">북토크님 프로필 사진</span>By 북토크<span class="date">2017.10.27</span>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<p class="category">뉴스<span>DC Comics</span></p>
+									<div class="title">
+										<strong>장대한 역사의 DC 코믹 유니버스를 한대한 역사의 DC 코믹 유니버스를 한대한 역사의 DC 코믹 유니버스를 한번에 알...</strong>
+										<p>
+											DC 코믹스 백과사전은 소개 글과 함께 DC의 히스토리를 백과사전은 소개 글과 함께 DC의 히스토리백과사전은 소개 글과 함께 DC의 히스토리백과사전은 소개 글과 함께 DC의 히스토리 소개...
+										</p>
+									</div>
+									<p class="writer">
+										<span class="writer-thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">북토크님 프로필 사진</span>By 북토크<span class="date">2017.10.27</span>
 									</p>
 								</a>
 							</li>
 						</ul>
 					</div>
-					<div id="tabboxcon21" class="tabboxcon">
+					<div id="tabboxcon11" class="tabboxcon">
 						1
 					</div>
-					<div id="tabboxcon22" class="tabboxcon">
+					<div id="tabboxcon12" class="tabboxcon">
 						2
 					</div>
-					<div id="tabboxcon23" class="tabboxcon">
+					<div id="tabboxcon13" class="tabboxcon">
 						3
 					</div>
 					<a href="#btn-prev" class="btn-prev">이전</a>
 					<a href="#btn-next" class="btn-next">다음</a>
 					<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
+					<script type="text/javascript">
+						var newsTab = new FG_tabContent($('.news .tabbox'));
+						newsTab._load();
+					</script>
 				</div>
-				<script type="text/javascript">
-					var newsTab = new FG_tabContent($('.news .tabbox'));
-					newsTab._load();
-				</script>
 
 				<div class="newbook">
 					<h3>신간</h3>
-					<ul class="list">
-						<li>
-							<a href="">
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
-								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;"></div>
-								<p class="title"><strong>스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</strong></p>
-								<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
-								<p class="category">시공사,액션</p>
-								<p class="score"><strong style="width:80%;">4점</strong></p>
-							</a>
-						</li>
-					</ul>
-					<a href="#btn-prev" class="btn-prev">이전</a>
-					<a href="#btn-next" class="btn-next">다음</a>
+					<div class="list">
+						<ul>
+							<li>
+								<a href="">
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<div class="class-ebook">e book</div>
+									<p class="title">스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</p>
+									<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+									<p class="category">시공사,액션</p>
+									<p class="score-02"><strong style="width:20%;">1점</strong></p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<div class="class-ebook">e book</div>
+									<p class="title">스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</p>
+									<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+									<p class="category">시공사,액션</p>
+									<p class="score-02"><strong style="width:40%;">2점</strong></p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<div class="class-paperbook">paper book</div>
+									<p class="title">스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</p>
+									<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+									<p class="category">시공사,액션</p>
+									<p class="score-02"><strong style="width:60%;">3점</strong></p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<div class="class-all">all</div>
+									<p class="title">스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</p>
+									<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+									<p class="category">시공사,액션</p>
+									<p class="score-02"><strong style="width:80%;">4점</strong></p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="thumb" style="background:url(http://bicon.kr/upload/books/20170310/1488940469-75127100_251126275.jpg) no-repeat 50% 50%;background-size:cover;">책제목 이미지</div>
+									<div class="class-paperbook">paper book</div>
+									<p class="title">스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것스파이더맨의 모든것</p>
+									<p class="writer">마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐마크밀러,뎅ㄱ스터 바인스, 스티브 맥니븐</p>
+									<p class="category">시공사,액션</p>
+									<p class="score-02"><strong style="width:100%;">5점</strong></p>
+								</a>
+							</li>
+						</ul>
+					</div>
 					<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
 				</div>
-
 
 				<div class="popular">
 					<h3>오늘 화재의 글</h3>
@@ -371,14 +435,13 @@
 					<a href="#btn-prev" class="btn-prev">이전</a>
 					<a href="#btn-next" class="btn-next">다음</a>
 					<a href="http://booktalk.world/mobile/book/today_new.php" class="btn-all">전체보기</a>
+					<script type="text/javascript">
+						var popularTab = new FG_tabContent($('.popular .tabbox'));
+						popularTab._load();
+					</script>
 				</div>
-				<script type="text/javascript">
-					var popularTab = new FG_tabContent($('.popular .tabbox'));
-					popularTab._load();
-				</script>
-
 			</div>
-			
+
 			<footer class="footer">
 				<div id="notice02" class="notice">
 					<div class="inner">
@@ -429,7 +492,7 @@
 				</address>
 
 			</footer>
-			
+
 			<div class="quick-menu-side">
 				<h3>최근 본 상품</h3>
 				<div class="lately">
