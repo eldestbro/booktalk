@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/common.css?201702141000">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/bebecook.css?201709141134">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/contents.css?201612051800">
+
+	<title>이유식주문단계(모바일)</title>
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/order_1.css?201607211500">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/contents_2.css?201607211500">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/mypSect.css?201607141732">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script src="http://www.bebecook.com/opensource/jquery/jquery-3.2.1.min.js"></script>
+	<script src="http://www.bebecook.com/opensource/moment-2.18.1/moment.min.js"></script>
+	<script src="http://www.bebecook.com/opensource/noir.js.library-1.0.0/jquery.library-1.0.0.js"></script>
+	<script src="http://www.bebecook.com/m/inc/m_util.js"></script>
+</head>
+<style type="text/css">
+.select_b {position:relative;display:inline-block;min-width:60px;height:36px;line-height:34px;font-size:11px;color:#040404;border:1px solid #a7a7a7;border-radius:2px;background-color:#fff;vertical-align:top;box-sizing:border-box;}
+.select_b select {position:absolute;left:0;top:0;width:100%;height:26px;opacity:0;z-index:1;}
+.select_b span.txt {position:relative;display:inline-block;overflow:hidden;width:80%;margin-left:14px;white-space:nowrap;text-overflow:ellipsis;cursor:pointer;z-index:0;}
+.select_b span.bl {position:absolute;top:0px;right:0px;width:35px;height:35px;border-left:1px solid #a7a7a7;}
+.select_b span.bl:after {content:"";display:block;position:absolute;top:50%;left:50%;width:14px;height:9px;margin-top:-4.5px;margin-left:-7px;background:#fff url(img/select.png) no-repeat 0 0;background-size:cover;z-index:0;}
+
+
+
+/* 딜 상세 하단 구매 버튼 */
+.product_sub_deal_area {position:fixed;bottom:0;left:0;right:0;z-index:40;}
+.product_sub_deal_area #select_area01 {cursor:pointer;}
+.product_sub_deal_area .btn_open {display:block;position:absolute;top:-29px;left:50%;width:100px;height:30px;margin-left:-50px;z-index:50;}
+.product_sub_deal_area .btn_open span {display:block;width:43px;height:15px;margin:15px auto 0;background:url(img/deal_ico_btn.png) no-repeat 0 0;font-size:0;background-size:cover;}
+.product_sub_deal_area.active .btn_open span {background-position:0 -15px;}
+
+
+
+.product_sub_deal_area .product_sub_deal {position:relative;border-top:1px solid #616161;z-index:40;overflow:hidden;}
+.product_sub_deal_area .product_sub_deal .option {position:relative;padding:20px 25px 10px 25px;height:170px;
+overflow-x:hidden;
+overflow-y:scroll;
+-webkit-overflow-scrolling: touch;
+-moz-overflow-scrolling: touch;
+-ms-overflow-scrolling: touch;
+-o-overflow-scrolling: touch;
+overflow-scrolling: touch;
+}
+.product_sub_deal_area .product_sub_deal .option .select_b {display:block;z-index:10;cursor:pointer;}
+.product_sub_deal_area .product_sub_deal .option .select_b.disabled {opacity:.5;}
+.product_sub_deal_area .product_sub_deal .option .selbox {display:block;}
+.product_sub_deal_area .product_sub_deal .option .selbox:hover {border:1px solid #ff4729;}
+.product_sub_deal_area .product_sub_deal .option .selbox:focus {border:1px solid #ff4729;}
+.product_sub_deal_area .product_sub_deal .option.active {z-index:30;}
+
+.product_sub_deal_area .product_sub_deal .option .select_area {position:relative;padding:0 0 5px 80px;}
+.product_sub_deal_area .product_sub_deal .option .select_title {position:absolute;top:0;left:0;font-size:13px;color:#767676;line-height:36px;}
+
+
+.product_sub_deal_area .product_sub_deal #select_area02 .select_b {margin:6px 0 0 0;}
+
+
+.product_sub_deal_area .product_sub_deal .price_info {position:relative;border-top:1px solid #adadad;padding:10px 0 0 0;margin:10px 0 0 0;}
+
+
+
+
+.product_sub_deal_area .price_btn {padding:25px 25px 25px 25px;}
+.product_sub_deal_area .price_btn a {display:block;position:relative;height:50px;background:#f56076;color:#fff;font-size:18px;font-weight:bold;line-height:50px;text-align:center;}
+
+
+
+
+.product_sub_deal_area .product_sub_deal .sumprice {position:relative;padding:0 0 0 25px;height:60px;line-height:60px;}
+.product_sub_deal_area .product_sub_deal .sumprice .stitle {font-size:17px;color:#000;}
+.product_sub_deal_area .product_sub_deal .sumprice .price {display:block;position:absolute;right:33px;bottom:0;font-size:20px;color:#000000;}
+.product_sub_deal_area .product_sub_deal .sumprice .price .point {font-size:16px;color:#ea3434;}
+.product_sub_deal_area .product_sub_deal .sumprice .price strong {font-size:32px;color:#000000;}
+
+
+
+.product_sub_deal_area .option_layer {display:none;position:absolute;height:130px;top:35px;left:80px;right:0;background:#fff;border:1px solid #000;font-size:13px;color:#000;line-height:16px;z-index:20;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;box-sizing:border-box;}
+.product_sub_deal_area .option_layer ul li {padding:5px 12px 8px 12px;border-top:1px solid #e0e0e0;cursor:pointer;}
+.product_sub_deal_area .option_layer ul li:hover {color:#ff4729;}
+.product_sub_deal_area .option_layer ul li:first-child {border-top:none;font-size:14px;color:#afafaf;}
+
+
+
+</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			//주문하기
+			$(".product_sub_deal_area .deal_btn_open").click(function(){
+				if ($(".product_sub_deal_area").hasClass("active")){
+					$(".product_sub_deal_area").removeClass("active");
+					$(".product_sub_deal .option").removeClass("active");
+					$(".product_sub_deal").animate({"height":"0"}, 600,"easeInOutExpo");
+				}else{
+					$(".product_sub_deal_area").addClass("active");
+					$(".product_sub_deal").animate({"height":"261px"}, 600,"easeInOutExpo");
+				}
+				return false;
+			});
+
+			//상품 선택
+			$(document).on("click",".select_b",function(){
+				$(".product_sub_deal .option_layer").hide();
+				$(this).next(".option_layer").show();
+			});
+
+
+		});
+	</script>
+<body>
+	<div class="wrapper">
+		<div class="inner">
+			<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/jquery-ui.min.css">
+			<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+			<div id="header_fix">
+				<!-- 메뉴 버튼 -->
+				<button type="button" id="open_menu_btn" class="ham_menu_btn"><span>메뉴열기</span></button>
+				<strong class="bubble_login" style="">로그인</strong>
+				<h1>
+					<a href="/m/m_index.asp"><img src="http://www.bebecook.com/m/img/logo.png" alt="베베쿡"></a>
+				</h1>
+				<p>
+					<button type="button" id="variable_area_cart" class="variable_area_cart">
+						<a href="/m/mypage/m_login.asp?rtnurl=/m/payment/m_order_basket.asp"></a>
+						<a href="/m/payment/m_order_basket.asp"><img src="http://www.bebecook.com/m/img/header_top_cart.png" alt="장바구니"></a>
+					</button>
+					<button type="button" id="variable_area_my" class="variable_area_my">
+						<a href="/m/mypage/m_login.asp?rtnurl=/m/mypage/m_main.asp">
+							<img src="http://www.bebecook.com/m/img/header_top_my.png" alt="마이베베쿡">
+						</a>
+					</button>
+				</p>
+			</div>
+
+			<div class="product_sub_deal_area">
+				<a href="#" class="btn_open deal_btn_open"><span>열기</span></a>
+				<div class="product_sub_deal">
+					<div class="option">
+						<div class="select_area">
+							<div class="select_title">배송지</div>
+							<span class="select_b"><span class="txt">배송지를 선택해주세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li>
+										[01] [동원] 프랑스 가정식디저트 수플레 망고 62g (유통기한:17.12.14)
+										&nbsp;117 개 남음
+										&nbsp;1,000원
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_area">
+							<div class="select_title">시작일</div>
+							<span class="select_b"><span class="txt">배송지를 선택해주세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li>
+										[01] [동원] 프랑스 가정식디저트 수플레 망고 62g (유통기한:17.12.14)
+										&nbsp;117 개 남음
+										&nbsp;1,000원
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_area">
+							<div class="select_title">배송수량</div>
+							<span class="select_b"><span class="txt">배송지를 선택해주세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li>
+										[01] [동원] 프랑스 가정식디저트 수플레 망고 62g (유통기한:17.12.14)
+										&nbsp;117 개 남음
+										&nbsp;1,000원
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_area">
+							<div class="select_title">배송간격</div>
+							<span class="select_b"><span class="txt">배송지를 선택해주세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li>
+										[01] [동원] 프랑스 가정식디저트 수플레 망고 62g (유통기한:17.12.14)
+										&nbsp;117 개 남음
+										&nbsp;1,000원
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="sumprice">
+						<div class="stitle">결제금액</div>
+						<span class="price"><span class="point">14세트(3%할인)</span> <strong>51,800</strong>원</span>
+					</div>
+				</div>
+				<div class="price_btn">
+					<a href="#" class="deal_btn_open">주문하기</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
