@@ -91,6 +91,7 @@
 					.new_order .new_order_cal .tab a {display:block;float:left;width:50%;height:42px;box-sizing:border-box;text-align:center;line-height:42px;font-size:14px;color:#8b8b8b;background:#f0f0f0;font-weight:bold;}
 					.new_order .new_order_cal .tab a.active {background:#fff;color:#2a55a0;}
 					.new_order .new_order_cal .tab a:first-child {border-right:1px solid #e1e1e1;}
+					.new_order .new_order_cal .tab:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
 					.new_order .new_order_cal .cal {margin-top:10px;padding:0 12px;}
 					.new_order .new_order_cal .cal .cal_title {font-size:15px;color:#000;text-align:center;font-weight:bold;line-height:50px;}
 					.new_order .new_order_cal .cal table {width:100%;}
@@ -253,23 +254,25 @@
 					</div>
 				</section>
 				<style type="text/css">
+					.new_order  {padding-bottom:50px;}
 					.new_order .new_order_menu {margin-bottom:10px;padding:0 0 15px 0;background:#fff;}
 					.new_order .new_order_menu .tab a {display:block;float:left;width:50%;height:42px;box-sizing:border-box;text-align:center;line-height:42px;font-size:14px;color:#8b8b8b;background:#f0f0f0;font-weight:bold;}
 					.new_order .new_order_menu .tab a.active {background:#fff;color:#2a55a0;}
 					.new_order .new_order_menu .tab a:first-child {border-right:1px solid #e1e1e1;}
+					.new_order .new_order_menu .tab:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
 					
 
 
-					.new_order .new_order_menu .stitle {font-size:11px;color:#3c3c3c;font-weight:bold;}
+					.new_order .new_order_menu .stitle {padding-top:20px;padding-left:3%;font-size:12px;color:#3c3c3c;font-weight:bold;}
 					.new_order .new_order_menu .list {}
-					.new_order .new_order_menu .list ul li {border-top:1px solid #bebebe;box-sizing:border-box;padding:0 12px;}
+					.new_order .new_order_menu .list ul li {border-top:1px solid #bebebe;box-sizing:border-box;padding:20px 2% 20px;}
 					.new_order .new_order_menu .list ul li .item {float:left;width:50%;}
-					.new_order .new_order_menu .list ul li .item .date {font-size:14px;color:#9f9f9f;}
-					.new_order .new_order_menu .list ul li .item .item-list p {float:left;width:50%;padding-left:5%;font-size:12px;color:#424242;box-sizing:border-box;}
-					
-					.new_order .new_order_menu .list ul li .item .item-list p img {width:100%;}
+					.new_order .new_order_menu .list ul li .item .date {display:block;padding-bottom:5px;padding-left:3%;font-size:14px;color:#9f9f9f;}
+					.new_order .new_order_menu .list ul li .item .item-list p {float:left;width:50%;padding:0 2%;font-size:12px;color:#424242;box-sizing:border-box;}
+					.new_order .new_order_menu .list ul li .item .item-list p img {width:100%;margin-bottom:5px;}
 					.new_order .new_order_menu .list ul li .item:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
-
+					.new_order .new_order_menu .list ul li.num4 .item {width:100%;}
+					.new_order .new_order_menu .list ul li.num4 .item-list p {width:25%;padding:0 1%;}
 
 					.new_order .new_order_menu .list ul li:first-child {border-top:none;}
 					.new_order .new_order_menu .list ul li:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
@@ -281,6 +284,10 @@
 					.new_order .new_order_menu .guide ul li:before {content:"*";display:block;position:absolute;top:2px;left:0;color:#2ac1bc;}
 					.new_order .new_order_menu .guide ul li:first-child {margin-top:0;}
 
+					.new_order .new_order_btn a {display:block;float:left;height:50px;text-align:center;line-height:50px;font-size:16px;color:#fff;font-weight:bold;}
+					.new_order .new_order_btn a.btn_re {width:35%;background:#4d4d4d;}
+					.new_order .new_order_btn a.btn_payment {width:65%;background:#f56076;}
+					.new_order .new_order_btn:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
 
 				</style>
 				<section id="new_order_menu" class="new_order_menu">
@@ -291,6 +298,57 @@
 					<div class="stitle">2가지 메뉴 중 한가지를 선택해 주세요.</div>
 					<div class="list">
 						<ul>
+							<li class="num4">
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+							</li>
 							<li>
 								<div class="item">
 									<span class="date">11월21일(화)</span>
@@ -327,7 +385,7 @@
 						</ul>
 					</div>
 				</section>
-
+				
 				<section class="new_order_btn">
 					<a href="" class="btn_re">옵션재선택</a>
 					<a href="" class="btn_payment">결제하기</a>
