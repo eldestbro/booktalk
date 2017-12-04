@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/common.css?201702141000">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/bebecook.css?201709141134">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/contents.css?201612051800">
+	<title>이유식주문단계(모바일)</title>
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/order_1.css?201607211500">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/contents_2.css?201607211500">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/mypSect.css?201607141732">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script src="http://www.bebecook.com/opensource/jquery/jquery-3.2.1.min.js"></script>
+	<script src="http://www.bebecook.com/opensource/moment-2.18.1/moment.min.js"></script>
+	<script src="http://www.bebecook.com/opensource/noir.js.library-1.0.0/jquery.library-1.0.0.js"></script>
+	<script src="http://www.bebecook.com/m/inc/m_util.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="inner">
+			<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/jquery-ui.min.css">
+			<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+			<div id="header_fix">
+				<!-- 메뉴 버튼 -->
+				<button type="button" id="open_menu_btn" class="ham_menu_btn"><span>메뉴열기</span></button>
+				<strong class="bubble_login" style="">로그인</strong>
+				<h1>
+					<a href="/m/m_index.asp"><img src="http://www.bebecook.com/m/img/logo.png" alt="베베쿡"></a>
+				</h1>
+				<p>
+					<button type="button" id="variable_area_cart" class="variable_area_cart">
+						<a href="/m/mypage/m_login.asp?rtnurl=/m/payment/m_order_basket.asp"></a>
+						<a href="/m/payment/m_order_basket.asp"><img src="http://www.bebecook.com/m/img/header_top_cart.png" alt="장바구니"></a>
+					</button>
+					<button type="button" id="variable_area_my" class="variable_area_my">
+						<a href="/m/mypage/m_login.asp?rtnurl=/m/mypage/m_main.asp">
+							<img src="http://www.bebecook.com/m/img/header_top_my.png" alt="마이베베쿡">
+						</a>
+					</button>
+				</p>
+			</div>
+			<!-- 20171204 -->
+			<style type="text/css">
+				.new_order {padding:12px 12px 50px 12px;background:#e1e1e1;}
+				.new_order .new_order_info {margin-bottom:10px;padding:0 0 20px 0;background:#fff;}
+				.new_order .new_order_info ul {padding:20px 30px 0px 30px;}
+				.new_order .new_order_info ul li {position:relative;padding:0 0 10px 80px;font-size:14px;line-height:17px;color:#000;}
+				.new_order .new_order_info ul li .stitle {position:absolute;top:0;left:0;color:#767676;}
+				.new_order .new_order_info .add {padding:0 30px 15px;color:#474747;font-size:14px;}
+				.new_order .new_order_info .add span {display:block;position:relative;padding-left:16px;}
+				.new_order .new_order_info .add span:after {content:"";display:block;position:absolute;top:5px;left:0;width:11.5px;height:11.5px;background:url(img/ico_add.png) no-repeat 0 0;background-size:cover;}
+				.new_order .new_order_info .new_order_info_price {margin:0 13px;padding:18px 10px 5px 10px;border:1px solid #eb3e3e;box-sizing:border-box;overflow:hidden;}
+				.new_order .new_order_info .new_order_info_price .price {position:relative;margin-right:5px;padding:0 10px 0 5px;font-size:15px;color:#000;}
+				.new_order .new_order_info .new_order_info_price .price strong {font-size:16px;}
+				.new_order .new_order_info .new_order_info_price .price:after {content:"";display:block;position:absolute;top:2px;left:0;right:0;height:7px;background:url(img/arrow.png) no-repeat 100% 0;background-size:cover;}
+				.new_order .new_order_info .new_order_info_price .price .sale {position:absolute;top:-22px;left:0;width:300px;font-size:14px;color:#ea3434;}
+				.new_order .new_order_info .new_order_info_price .price_pay {color:#ea3434;font-size:23px;}
+				.new_order .new_order_info .new_order_info_price .price_pay .txt {font-size:15px;color:#000;font-weight:bold;}
+				.new_order .new_order_info .new_order_info_price .price_pay strong {font-size:28px;}
+				.new_order .new_order_cal {margin-bottom:10px;padding:0 0 15px 0;background:#fff;}
+				.new_order .new_order_cal .tab a {display:block;float:left;width:50%;height:42px;box-sizing:border-box;text-align:center;line-height:42px;font-size:14px;color:#8b8b8b;background:#f0f0f0;font-weight:bold;}
+				.new_order .new_order_cal .tab a.active {background:#fff;color:#2a55a0;}
+				.new_order .new_order_cal .tab a:first-child {border-right:1px solid #e1e1e1;}
+				.new_order .new_order_cal .tab:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
+				.new_order .new_order_cal .cal {margin-top:10px;padding:0 12px;}
+				.new_order .new_order_cal .cal .cal_title {font-size:15px;color:#000;text-align:center;font-weight:bold;line-height:50px;}
+				.new_order .new_order_cal .cal table {width:100%;}
+				.new_order .new_order_cal .cal table th {height:35px;text-align:center;color:#3e454c;font-size:11px;vertical-align:top;font-weight:normal;}
+				.new_order .new_order_cal .cal table td {position:relative;height:45px;text-align:center;color:#3e454c;font-size:11px;vertical-align:top;line-height:20px;}
+				.new_order .new_order_cal .cal table td .amount {display:block;color:#6f6f6f;}
+				.new_order .new_order_cal .cal table td .num {display:block;position:relative;z-index:20;}
+				.new_order .new_order_cal .cal table td.cal_select {color:#fff;}
+				.new_order .new_order_cal .cal table td.cal_select:after {content:"";display:block;position:absolute;top:0;left:0;right:0;height:20px;background:#7fd1d6;z-index:10;}
+				.new_order .new_order_cal .cal table td.cal_select.start:after {border-radius:10px 0 0 10px;}
+				.new_order .new_order_cal .cal table td.cal_select.last:after {border-radius:0 10px 10px 0;}
+				.new_order .new_order_cal .cal table td.cal_select:first-child:after {border-radius:10px 0 0 10px;}
+				.new_order .new_order_cal .cal table td.cal_select:last-child:after {border-radius:0 10px 10px 0;}
+				.new_order .new_order_cal .cal table td.cal_select.amount2:before {content:"";display:block;position:absolute;top:0;left:50%;width:20px;height:20px;margin-left:-10px;background:#2a55a0;border-radius:20px;z-index:15;}
+				.new_order .new_order_cal .cal table td.cal_select.amount2 .amount {color:#2b2b2b;}
+				.new_order .new_order_cal .guide {margin-top:15px;padding:0 12px;}
+				.new_order .new_order_cal .guide ul {padding:10px 10px 10px 10px;border:1px solid #d4d4d4;font-size:11px;line-height:16px;color:#666;}
+				.new_order .new_order_cal .guide ul li {position:relative;margin-top:5px;padding-left:8px;}
+				.new_order .new_order_cal .guide ul li:before {content:"*";display:block;position:absolute;top:2px;left:0;color:#2ac1bc;}
+				.new_order .new_order_cal .guide ul li:first-child {margin-top:0;}
+				.new_order .new_order_menu {margin-bottom:10px;padding:0 0 15px 0;background:#fff;}
+				.new_order .new_order_menu .tab a {display:block;float:left;width:50%;height:42px;box-sizing:border-box;text-align:center;line-height:42px;font-size:14px;color:#8b8b8b;background:#f0f0f0;font-weight:bold;}
+				.new_order .new_order_menu .tab a.active {background:#fff;color:#2a55a0;}
+				.new_order .new_order_menu .tab a:first-child {border-right:1px solid #e1e1e1;}
+				.new_order .new_order_menu .tab:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
+				.new_order .new_order_menu .stitle {padding-top:20px;padding-left:3%;font-size:12px;color:#3c3c3c;font-weight:bold;}
+				.new_order .new_order_menu .list {}
+				.new_order .new_order_menu .list ul li {border-top:1px solid #bebebe;box-sizing:border-box;padding:20px 2% 20px;}
+				.new_order .new_order_menu .list ul li .item {float:left;width:50%;}
+				.new_order .new_order_menu .list ul li .item .date {display:block;padding-bottom:5px;padding-left:3%;font-size:14px;color:#9f9f9f;}
+				.new_order .new_order_menu .list ul li .item .item-list p {float:left;width:50%;padding:0 2%;font-size:12px;color:#424242;box-sizing:border-box;}
+				.new_order .new_order_menu .list ul li .item .item-list p img {width:100%;margin-bottom:5px;}
+				.new_order .new_order_menu .list ul li .item:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
+				.new_order .new_order_menu .list ul li.num4 .item {width:100%;}
+				.new_order .new_order_menu .list ul li.num4 .item-list p {width:25%;padding:0 1%;}
+				.new_order .new_order_menu .list ul li:first-child {border-top:none;}
+				.new_order .new_order_menu .list ul li:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
+				.new_order .new_order_menu .guide {margin-top:15px;padding:0 12px;}
+				.new_order .new_order_menu .guide ul {padding:10px 10px 10px 10px;border:1px solid #d4d4d4;font-size:11px;line-height:16px;color:#666;}
+				.new_order .new_order_menu .guide ul li {position:relative;margin-top:5px;padding-left:8px;}
+				.new_order .new_order_menu .guide ul li:before {content:"*";display:block;position:absolute;top:2px;left:0;color:#2ac1bc;}
+				.new_order .new_order_menu .guide ul li:first-child {margin-top:0;}
+				.new_order .new_order_btn a {display:block;float:left;height:50px;text-align:center;line-height:50px;font-size:16px;color:#fff;font-weight:bold;}
+				.new_order .new_order_btn a.btn_re {width:35%;background:#4d4d4d;}
+				.new_order .new_order_btn a.btn_payment {width:65%;background:#f56076;}
+				.new_order .new_order_btn:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
+			</style>
+			<div class="new_order">
+				<section class="new_order_info">
+					<ul>
+						<li>
+							<span class="stitle">단계명</span>
+							초기1단계
+						</li>
+						<li>
+							<span class="stitle">배송수량</span>
+							28세트 / 매일
+						</li>
+						<li>
+							<span class="stitle">배송지</span>
+							서울 마포구 연남동 성미산로 100 프르지오 1동 123호
+						</li>
+						<li>
+							<span class="stitle">배송기간</span>
+							2017.10.14 ~ 11.14
+						</li>
+					</ul>
+					<div class="add">
+						<span>이유식 전용 보냉가방 : 3,000원</span>
+					</div>
+					<div class="new_order_info_price">
+						<span class="price"><span class="sale">(10% 할인)</span><strong>245,600</strong>원</span>
+						<span class="price_pay"><span class="txt">결제금액</span> <strong>224,000</strong>원</span>
+					</div>
+				</section>
+
+				<section id="new_order_cal" class="new_order_cal">
+					<div class="tab">
+						<a href="#new_order_cal" class="active">배송일정</a>
+						<a href="#new_order_menu">메뉴와 식단</a>
+					</div>
+					<div class="cal">
+						<div class="cal_title">10월</div>
+						<table>
+							<caption>배송달력</caption>
+							<thead>
+								<tr>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+									<th scope="col">일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="num">1</span></td>
+									<td><span class="num">2</span></td>
+									<td><span class="num">3</span></td>
+									<td class="cal_select start"><span class="num">4</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">5</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">6</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">7</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">8</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">9</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">10</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">11</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">12</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">13</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">14</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">15</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">16</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">17</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">18</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">19</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">20</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">21</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">22</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">23</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">24</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">25</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">26</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">27</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">28</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">29</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">30</span><span class="amount">1세트</span></td>
+									<td class="cal_select last"><span class="num">31</span><span class="amount">1세트</span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cal">
+						<div class="cal_title">11월</div>
+						<table>
+							<caption>배송달력</caption>
+							<thead>
+								<tr>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+									<th scope="col">일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="num">1</span></td>
+									<td><span class="num">2</span></td>
+									<td><span class="num">3</span></td>
+									<td class="cal_select start"><span class="num">4</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">5</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">6</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">7</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">8</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">9</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">10</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">11</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">12</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">13</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">14</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">15</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">16</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">17</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">18</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">19</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">20</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">21</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">22</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">23</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">24</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">25</span><span class="amount">1세트</span></td>
+									<td class="cal_select amount2"><span class="num">26</span><span class="amount">2세트</span></td>
+									<td class="cal_select"><span class="num">27</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">28</span><span class="amount">1세트</span></td>
+								</tr>
+								<tr>
+									<td class="cal_select"><span class="num">29</span><span class="amount">1세트</span></td>
+									<td class="cal_select"><span class="num">30</span><span class="amount">1세트</span></td>
+									<td class="cal_select last"><span class="num">31</span><span class="amount">1세트</span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="guide">
+						<ul>
+							<li>[마이베베쿡>식단매니저>배송변경]에서 자유롭게 배송 관리 가능합니다.</li>
+							<li>베베쿡은 생산 후 24시간 이내로 가장 신선하게 배송됩니다.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section id="new_order_menu" class="new_order_menu">
+					<div class="tab">
+						<a href="#new_order_cal">배송일정</a>
+						<a href="#new_order_menu" class="active">메뉴와 식단</a>
+					</div>
+					<div class="stitle">2가지 메뉴 중 한가지를 선택해 주세요.</div>
+					<div class="list">
+						<ul>
+							<li class="num4">
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+								<div class="item">
+									<span class="date">11월21일(화)</span>
+									<div class="item-list">
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+										<p>
+											<img src="http://www.bebecook.com/__data/recipe/466s.jpg" alt="현미미음">
+											감자미음 <input type="checkbox" />
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="guide">
+						<ul>
+							<li>이유식은 알레르기를 일으킬 수 있는 난류(계란), 우유, 대두, 게, 새우, 밀, 돼지고기, 토마토, 호두, 쇠고기, 닭고기, 오징어, 조개류를 사용한 제품과 같은 제조시설에서 제조하고 있으니 알레르기에 예민한 아기는 주의해주세요.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="new_order_btn">
+					<a href="" class="btn_re">옵션재선택</a>
+					<a href="" class="btn_payment">결제하기</a>
+				</section>
+			</div>
+			<!-- //20171204 -->
+		</div>
+	</div>
+</body>
+</html>

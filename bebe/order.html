@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/common.css?201702141000">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/bebecook.css?201709141134">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/contents.css?201612051800">
+	<title>이유식주문단계(모바일)</title>
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/order_1.css?201607211500">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/contents_2.css?201607211500">
+	<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/mypSect.css?201607141732">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script src="http://www.bebecook.com/opensource/jquery/jquery-3.2.1.min.js"></script>
+	<script src="http://www.bebecook.com/opensource/moment-2.18.1/moment.min.js"></script>
+	<script src="http://www.bebecook.com/opensource/noir.js.library-1.0.0/jquery.library-1.0.0.js"></script>
+	<script src="http://www.bebecook.com/m/inc/m_util.js"></script>
+
+
+
+	<style type="text/css">
+		
+
+		.header {position:relative;height:42px;border-bottom:1px solid #bfbfbf;}
+		.header h1 {width:83px;margin:0 auto;padding-top:5.5px;}
+		.header h1 img {width:100%;}
+		.header .ham_menu_btn {position:absolute;top:0;left:0;width:42px;height:42px;font-size:0;}
+		.header .ham_menu_btn:after {content:"";display:block;position:absolute;top:50%;left:50%;width:25px;height:25px;margin-top:-12.5px;margin-left:-12.5px;background:url(img/ico_header.png) no-repeat 0 0;font-size:0;background-size:cover;}
+		.header .variable_area_cart {position:absolute;top:0;right:40px;width:30px;height:42px;font-size:0;}
+		.header .variable_area_cart:after {content:"";display:block;position:absolute;top:50%;left:50%;width:25px;height:25px;margin-top:-12.5px;margin-left:-12.5px;background:url(img/ico_header.png) no-repeat -25px 0;font-size:0;background-size:cover;z-index:10;}
+		.header .variable_area_cart span {position:absolute;top:8px;right:-2px;width:12px;height:12px;border-radius:12px;background:#33bac3;line-height:12px;text-align:center;font-size:9px;color:#fff;z-index:20;}
+		
+		.header .variable_area_my {position:absolute;top:0;right:5px;width:30px;height:42px;font-size:0;}
+		.header .variable_area_my:after {content:"";display:block;position:absolute;top:50%;left:50%;width:25px;height:25px;margin-top:-12.5px;margin-left:-12.5px;background:url(img/ico_header.png) no-repeat -50px 0;font-size:0;background-size:cover;}
+		.page_header {position:relative;height:35px;border-bottom:1px solid #1d3c75;text-align:center;line-height:35px;font-size:14px;color:#656565;}
+		.page_header .btn_back {position:absolute;top:0;left:0;width:35px;height:35px;font-size:0;}
+		.page_header .btn_back:after {content:"";display:block;position:absolute;top:50%;left:50%;width:25px;height:25px;margin-top:-12.5px;margin-left:-7.5px;background:url(img/ico_header.png) no-repeat -75px 0;font-size:0;background-size:cover;}
+		.page_header .btn_other {position:absolute;top:50%;right:13px;width:50px;height:20px;margin-top:-10px;font-size:0;font-size:9px;color:#929292;border:1px solid #cacaca;box-sizing:border-box;line-height:20px;text-align:center;}
+
+
+		.product_sub_deal_area {position:fixed;bottom:0;left:0;right:0;z-index:40;background:#fff;}
+		.product_sub_deal_area .select_b {position:relative;display:inline-block;min-width:60px;height:36px;line-height:34px;font-size:11px;color:#040404;border:1px solid #a7a7a7;border-radius:2px;background-color:#fff;vertical-align:top;box-sizing:border-box;}
+		.product_sub_deal_area .select_b select {position:absolute;left:0;top:0;width:100%;height:26px;opacity:0;z-index:1;}
+		.product_sub_deal_area .select_b span.txt {position:relative;display:inline-block;overflow:hidden;width:70%;margin-left:14px;white-space:nowrap;text-overflow:ellipsis;cursor:pointer;z-index:0;}
+		.product_sub_deal_area .select_b .point {color:#f60}
+		.product_sub_deal_area .select_b .sale {color:#ea3434}
+		.product_sub_deal_area .select_b span.bl {position:absolute;top:0px;right:0px;width:35px;height:35px;border-left:1px solid #a7a7a7;}
+		.product_sub_deal_area .select_b span.bl:after {content:"";display:block;position:absolute;top:50%;left:50%;width:14px;height:9px;margin-top:-4.5px;margin-left:-7px;background:#fff url(img/select.png) no-repeat 0 0;background-size:cover;z-index:0;}
+		.product_sub_deal_area .select_b.active span.bl:after {background-position:0 -9px;}
+		.product_sub_deal_area .btn_open {display:block;position:absolute;top:-29px;left:50%;width:100px;height:30px;margin-left:-50px;z-index:50;}
+		.product_sub_deal_area .btn_open span {display:block;width:43px;height:15px;margin:15px auto 0;background:url(img/deal_ico_btn.png) no-repeat 0 0;font-size:0;background-size:cover;}
+		.product_sub_deal_area.active .btn_open span {background-position:0 -15px;}
+		.product_sub_deal_area .product_sub_deal {position:relative;border-top:1px solid #616161;z-index:40;overflow:hidden;height:0;}
+		.product_sub_deal_area .product_sub_deal .option {position:relative;padding:20px 25px 10px 25px;height:170px;overflow-x:hidden;overflow-y:scroll;-webkit-overflow-scrolling: touch;-moz-overflow-scrolling: touch;-ms-overflow-scrolling: touch;-o-overflow-scrolling: touch;overflow-scrolling: touch;z-index:10;background:#fff;}
+		.product_sub_deal_area .product_sub_deal .option .select_b {display:block;z-index:10;cursor:pointer;}
+		.product_sub_deal_area .product_sub_deal .option .select_b.disabled {opacity:.5;}
+		.product_sub_deal_area .product_sub_deal .option .selbox {display:block;}
+		.product_sub_deal_area .product_sub_deal .option .selbox:hover {border:1px solid #ff4729;}
+		.product_sub_deal_area .product_sub_deal .option .selbox:focus {border:1px solid #ff4729;}
+		.product_sub_deal_area .product_sub_deal .option.active {z-index:30;}
+		.product_sub_deal_area .product_sub_deal .option .select_area {position:relative;padding:0 0 5px 80px;}
+		.product_sub_deal_area .product_sub_deal .option .select_title {position:absolute;top:0;left:0;font-size:13px;color:#767676;line-height:36px;}
+		.product_sub_deal_area .product_sub_deal .price_info {position:relative;border-top:1px solid #adadad;padding:10px 0 0 0;margin:10px 0 0 0;}
+		.product_sub_deal_area .price_btn {padding:20px 25px 20px 25px;}
+		.product_sub_deal_area .price_btn a {display:block;position:relative;height:50px;background:#f56076;color:#fff;font-size:18px;font-weight:bold;line-height:50px;text-align:center;}
+		.product_sub_deal_area .product_sub_deal .sumprice {position:relative;padding:0 0 0 25px;height:50px;line-height:50px;z-index:20;	box-shadow: 0 -20px 20px -20px  rgba(0,0,0,0.6);background:#fff;}
+		.product_sub_deal_area .product_sub_deal .sumprice .stitle {font-size:17px;color:#000;}
+		.product_sub_deal_area .product_sub_deal .sumprice .price {display:block;position:absolute;right:33px;bottom:0;font-size:20px;color:#000000;}
+		.product_sub_deal_area .product_sub_deal .sumprice .price .point {font-size:16px;color:#ea3434;}
+		.product_sub_deal_area .product_sub_deal .sumprice .price strong {font-size:32px;color:#000000;}
+		.product_sub_deal_area .option_layer {display:none;position:absolute;top:35px;left:80px;right:0;margin-bottom:20px;background:#fff;border:1px solid #a7a7a7;font-size:13px;color:#000;line-height:16px;z-index:20;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;box-sizing:border-box;}
+		.product_sub_deal_area .option_layer ul li {height:34px;line-height:34px;box-sizing:border-box;padding:0 14px;border-bottom:1px solid #a7a7a7;cursor:pointer;font-size:11px;}
+		.product_sub_deal_area .option_layer ul li .point {color:#f60}
+		.product_sub_deal_area .option_layer ul li .sale {color:#ea3434}
+		.product_sub_deal_area .option_layer ul li:hover {background:#f3f3f3;}
+		.product_sub_deal_area .option_layer ul li.active {background:#f3f3f3;}
+		.product_sub_deal_area .option_layer ul li:last-child {border-bottom:none;}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//주문하기
+			$(".product_sub_deal_area .deal_btn_open").click(function(){
+				if ($(".product_sub_deal_area").hasClass("active")){
+					$(".product_sub_deal_area").removeClass("active");
+					$(".product_sub_deal .option").removeClass("active");
+					$(".product_sub_deal").animate({"height":"0"}, 600,"easeInOutExpo");
+				}else{
+					$(".product_sub_deal_area").addClass("active");
+					$(".product_sub_deal").animate({"height":"251px"}, 600,"easeInOutExpo");
+				}
+				return false;
+			});
+
+			//상품 선택
+			$(document).on("click",".select_b",function(){
+				$(".product_sub_deal .option_layer").hide();
+				$(this).next(".option_layer").show();
+				$(this).addClass("active");
+			});
+			$(document).on("click",".option_layer ul li",function(){
+				var selectVal = $(this).html();
+				$(this).parents(".option_layer").find("li").removeClass("active");
+				$(this).addClass("active");
+				$(".product_sub_deal .option_layer").hide();
+				$(".select_b").removeClass("active");
+				$(this).parents(".option_layer").prev(".select_b").find(".txt").html(selectVal);
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="inner">
+			<link rel="stylesheet" href="http://www.bebecook.com/m/m_css/jquery-ui.min.css">
+			<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+			<div class="header">
+				<button type="button" id="open_menu_btn" class="ham_menu_btn">메뉴열기</button>
+				<h1><a href="/m/m_index.asp"><img src="./img/logo.png" alt="베베쿡"></a></h1>
+				<button type="button" id="variable_area_cart" class="variable_area_cart">
+					<a href="/m/payment/m_order_basket.asp">장바구니<span>1</span></a>
+				</button>
+				<button type="button" id="variable_area_my" class="variable_area_my">
+					<a href="/m/mypage/m_login.asp?rtnurl=/m/mypage/m_main.asp">마이베베쿡</a>
+				</button>
+			</div>
+			<div class="page_header">
+				<a href="#" class="btn_back">뒤로</a>
+				제품상세
+				<a href="#" class="btn_other">다른단계</a>
+			</div>
+
+
+<section class="step_info_Wrap">
+							<div class="mainFigure" id="div_board_img">
+								<img src="http://www.bebecook.com/m/img/m_step_01.jpg">
+							</div>
+							<article class="step_contents_Wrap">
+								<ul class="info_tab">
+									<li id="div_tab_info" class="on" onclick="goTab('TAB_INFO'); return false;">서비스안내</li>
+									<li id="div_tab_calendar" class="off" onclick="goTab('TAB_CALENDAR'); return false;">매일식단</li>
+									<li id="div_tab_menu" class="off" onclick="goTab('TAB_MENU'); return false;">메뉴와식재료</li>
+								</ul>
+
+								<div id="div_tab_info_data">
+
+			<ul class="step_cont_sidemenu">
+				<li class="on"><a href="#" onclick="goTabSub('');">상세정보</a></li>
+				<li class="off"><a href="#" onclick="goTabSub('1500010');">보관방법</a></li>
+				<li class="off"><a href="#" onclick="goTabSub('1500011');">변경/결제</a></li>
+			</ul>
+<div style="padding:0px;"><div id="stepInfo_Wrap">
+<div class="stepInfo">
+
+<span class="PPoint">초기1 단계는 당질 소화 능력이 발달하는 생후 5개월 전후입니다.</span>
+<p class="ConDetail">아기에게 모유나 분유 이외의 자연식품을 맛보게 해줌과 동시에 과민 반응을 일으키는 식품을 알아 낼 수 있습니다.</p>
+<p class="ConDetail">알레르기가 거의 없는 곡류를 제일 처음 사용합니다.</p>
+
+<span class="PPoint">한가지 재료를 첨가한 가장 묽은 10배 미음입니다.</span>
+<p class="ConDetail">처음이니까 부드럽고 매끄러워야 목구멍을 잘 통과할 수 있습니다.</p>
+<p class="ConDetail">3~4일간은 이유식 숟가락으로 4~5회 정도의 적응 기간으로 진행해 주세요.</p>
+
+<span class="PPoint">입안에 넣은 것을 혀로 밀어내거나 토하는 경우도 많아요.</span>
+<p class="ConDetail">처음은 늘 서툴잖아요. 여유를 갖고 아기 상태를 관찰하며 천천히 꾸준하게 진행하는 것이 중요합니다.</p>
+<p class="ConDetail">일정한 시간에 이유식을 먹여주어 생활 리듬을 만들어 주면, 이유식 진행이 좀 더 수월해 집니다.</p>
+
+<h1>초기1 하루 스케쥴</h1>
+<ul class="dayVolume">
+<li>· 수유 총량 : 800~1,000cc</li>
+<li>· 1회 이유식량 : 30~60g (베베쿡 1/4 ~ 1/2 팩) </li>
+</ul>
+<ul class="timeTable">
+<li><img src="http://www.bebecook.com/m/img/timeTable01_01.jpg"></li>
+<li><img src="http://www.bebecook.com/m/img/timeTable02_02.jpg"></li>
+<li><img src="http://www.bebecook.com/m/img/timeTable01_02.jpg"></li>
+<li><img src="http://www.bebecook.com/m/img/timeTable01_03.jpg"></li>
+<li><img src="http://www.bebecook.com/m/img/timeTable01_04.jpg"></li>
+</ul>
+
+</div>
+</div></div>
+		</div>
+								<div id="div_tab_calendar_data"></div>
+								<div id="div_tab_menu_data"></div>
+								<div id="div_loading" style="text-align: center; margin-top: 20px; display: none;"><img src=" /m/img/m_loading.gif" width="75"></div>
+							</article>
+							<br><br><br><br>
+
+						</section>
+
+
+
+
+
+			<!-- 20171204 -->
+			<div class="product_sub_deal_area">
+				<a href="#" class="btn_open deal_btn_open"><span>열기</span></a>
+				<div class="product_sub_deal">
+					<div class="option">
+						<div class="select_area">
+							<div class="select_title">배송지</div>
+							<span class="select_b"><span class="txt">배송지를 선택해주세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li>새배송지</li>
+									<li>새배송지</li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_area">
+							<div class="select_title">시작일</div>
+							<span class="select_b"><span class="txt">시작일을 선택하세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li><span class="point">2017-12-07</span> (화)</li>
+									<li><span class="point">2017-12-07</span> (화)</li>
+									<li><span class="point">2017-12-07</span> (화)</li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_area">
+							<div class="select_title">배송수량</div>
+							<span class="select_b"><span class="txt">수량을 선택하세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li><span class="point">7세트</span> <strong>26,600원</strong></li>
+									<li><span class="point">14세트</span> 53,000원 → <strong>26,600원</strong> <span class="sale">(3% 할인)</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_area">
+							<div class="select_title">배송간격</div>
+							<span class="select_b"><span class="txt">받을 요일을 선택하세요.</span><span class="bl"></span></span>
+							<div class="option_layer">
+								<ul>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+									<li>일요일분 배송 요일:<span class="point">금요일</span></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="sumprice">
+						<div class="stitle">결제금액</div>
+						<span class="price"><span class="point">14세트(3%할인)</span> <strong>51,800</strong>원</span>
+					</div>
+				</div>
+				<div class="price_btn">
+					<a href="#" class="deal_btn_open">주문하기</a>
+				</div>
+			</div>
+			<!-- //20171204 -->
+
+		</div>
+	</div>
+</body>
+</html>
