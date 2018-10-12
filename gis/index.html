@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title></title>
+	<meta name="generator" content="editplus" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/jquery.scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/common.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="https://www.ildongshop.com/w/js/ui-library.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery.scrollbar.min.js"></script>
+	<script type="text/javascript" src="./assets/js/common.js"></script>
+
+
+</head>
+<body>
+	<div class="gis">
+		<header>
+			<a href="" class="btn-menu"></a>
+			<div class="search">
+				<form action="">
+					<div class="search-input">
+						<input type="text" placeholder="검색어를 입력해 주세요." />
+					</div>
+					<button>통합 검색</button>
+				</form>
+			</div>
+			<div class="util">
+				<h1>통합물정보지도</h1>
+				<a href="" class="btn-home">홈</a>
+				<a href="" class="btn-mypage">마이페이지</a>
+			</div>
+			<div class="menu">
+				<menu>
+					<a href="">시스템 소개</a>
+					<a href="">물통합정보</a>
+					<a href="">물통계</a>
+					<a href="">물지도</a>
+					<a href="">자료실</a>
+					<a href="">커뮤니티</a>
+					<a href="">업무서비스</a>
+					<a href="">게시판</a>
+				</menu>
+				<div class="notice">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><a href="">경기도 통합물관리 서비스가 론칭하였습니다. 많은 애용 바랍니다.</a></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<a href="">공지사항</a>
+				</div>
+			</div>
+		</header>
+		<aside id="test">
+			<ul class="tabs">
+				<li><a href="#search" class="menu01">위치 검색</a></li>
+				<li><a href="#layer" class="menu02">레이어</a></li>
+				<li><a href="#bookmark" class="menu03">즐겨찾기</a></li>
+				<li><a href="#download" class="menu04">다운로드</a></li>
+				<li><a href="#chart" class="menu05">통계</a></li>
+			</ul>
+			<div id="search" class="search">
+				<ul class="inner-tab">
+					<li>
+					
+					</li>
+				</ul>
+				<div class="scrollbar-inner">
+					
+				</div>
+			</div>
+			<div id="layer" class="layer">
+				<h4>레이어를 선택하세요.</h4>
+				<ul class="list">
+					<li><a href="#">수질 측정</a></li>
+					<li><a href="#">수위 측정</a></li>
+					<li><a href="#">상수시설물</a></li>
+					<li><a href="#">하수시설물</a></li>
+					<li>
+						<a href="#">하천시설물</a>
+						<div class="option">
+							<p><label><input type="checkbox" /> 하천류</label> <i class="ico-river"></i><a href="" class="btn-example">범례</a></p>
+							<p><label><input type="checkbox" /> 지류</label> <i class="ico-tributary"></i><a href="" class="btn-example">범례</a></p>
+							<p><label><input type="checkbox" /> 도량</label> <i class="ico-generosity"></i><a href="" class="btn-example">범례</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="#">약수터</a>
+
+					</li>
+					<li><a href="#">물놀이시설</a></li>
+				</ul>
+				
+			</div>
+			<div id="bookmark" class="bookmark">3</div>
+			<div id="download" class="download">4</div>
+			<div id="chart" class="chart">5</div>
+		</aside>
+		<section class="stage">
+			<div class="navi">
+				<a href="">경기도</a>
+				<a href="">용인시</a>
+				<a href="">기흥구</a>
+				<a href="">신갈동</a>
+			</div>
+			<div class="map-menu">
+				<div class="map-type">
+					<a href="">일반</a>
+					<a href="">항공</a>
+				</div>
+				<a href="" class="btn-screensave">화면 저장</a>
+				<a href="" class="btn-screenprint">화면 출력</a>
+			</div>
+			<div id="map" class="map">
+			
+			</div>
+			<div class="info">
+				<h4>상세정보</h4>
+				<div class="util">
+					<a href="" class="btn-bookmark">즐겨찾기</a>
+					<a href="" class="btn-close">닫기</a>
+				</div>
+				<div class="info-summary">
+					<table>
+						<tr>
+							<th>시설ID</th>
+							<td>1</td>
+							<th>명칭</th>
+							<td>처인구시설공단</td>
+						</tr>
+						<tr>
+							<th>주소</th>
+							<td colspan="3">주소</td>
+						</tr>
+					</table>
+				</div>
+				<dl class="info01">
+					<dt>시설상태</dt>
+					<dd>
+						<strong>수질상태</strong>
+						매우좋음
+					</dd>
+					<dd>
+						<strong>최근검사일</strong>
+						2018년 10월 10일
+					</dd>
+				</dl>
+				<dl class="info02">
+					<dt>검사이력정보</dt>
+					<dd>
+						<div class="tab">
+							<ul>
+								<li><a href="#">테이블</a></li>
+								<li><a href="#">통계</a></li>
+							</ul>
+						</div>
+						<div class="info-table">
+							<table>
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>일자</th>
+										<th>검사여부</th>
+										<th>사유</th>
+										<th>일반세균</th>
+										<th>총대장균군</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>20181005</td>
+										<td>검사</td>
+										<td>정기</td>
+										<td>58</td>
+										<td>불검출</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>20181005</td>
+										<td>검사</td>
+										<td>정기</td>
+										<td>58</td>
+										<td>불검출</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>20181005</td>
+										<td>검사</td>
+										<td>정기</td>
+										<td>58</td>
+										<td>불검출</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>20181005</td>
+										<td>검사</td>
+										<td>정기</td>
+										<td>58</td>
+										<td>불검출</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="info-chart">
+							통계
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
