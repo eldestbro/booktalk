@@ -1,0 +1,311 @@
+@charset "utf-8";
+
+/* base style */
+html, body {margin:0;padding:0;height:100%;font-family:"나눔 바른 고딕","Nanum Barun Gothic","돋움",dotum,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#404040;background:#fff;letter-spacing:-0.5px;-webkit-text-size-adjust:none;word-wrap:break-word;word-break:break-all;}
+p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,img,menu {margin:0;padding:0;}
+input,button,select,textarea{font-family:"나눔 바른 고딕","Nanum Barun Gothic","돋움",dotum,Helvetica,sans-serif;vertical-align:middle;}
+input[type="checkbox"], input[type="radio"] {margin:1px 0 0 0;vertical-align:top;}
+h1,h2,h3,h4,h5,h6 {font-size:0;}
+ul, ol, li {list-style:none;}
+img:not(.bokyakimg), fieldset, iframe {border:0 none;vertical-align:top;}
+table{border-collapse:collapse;}
+a:link,a:active, a:visited {color:#585858;text-decoration:none;cursor:pointer;}
+a:hover {color:#707070;text-decoration:none;cursor:pointer;}
+caption, legend {display:none;position:absolute;top:-1000em;left:0;display:block;overflow:hidden;}
+em,address{font-style:normal;}
+label {cursor:pointer;}
+.clear {clear:both;width:0;height:0;padding:0;margin:0;font-size:0;line-height:0;}
+.hand {cursor:pointer;}
+.non {color:#fff;}
+::-webkit-input-placeholder {color:#a4a4a4;}
+::-moz-placeholder {color:#555555;}
+:-ms-input-placeholder {color:#a4a4a4;}
+:-moz-placeholder {color:#555555;}
+.placeholder {color:#a4a4a4;}
+.placeholder small {color:#a4a4a4;}
+
+hr, .connone {display:none;}
+
+.hidden {visibility:hidden;margin:0;padding:0;width:0;height:0;background:none;font-size:0;line-height:0;display:none;}
+.hide {display:block;position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;line-height:0;overflow:hidden;font-size:0;text-indent:-9999px;}
+.show{visibility:visible;}
+
+a.accessibility {position:absolute;left:0;top:-10000px;display:block;width:100%;text-align:center;font-size:11px;z-index:1000;}
+a.accessibility:hover, a.accessibility:focus, a.accessibility:active{position:absolute;top:0;padding:5px 0;height:22px;line-height:22px;background:#292929;color:#fff;font-weight:bold;z-index:1000;}
+
+/* form - input */
+.input-a {padding:0 5px;height:28px;line-height:26px;border:1px solid #d8d8d8;color:#666;font-size:13px;box-sizing:border-box;}
+.input-a.small {padding:0 5px;height:20px;line-height:18px;border:1px solid #d8d8d8;font-size:11px;box-sizing:border-box;}
+.input-a.big {padding:0 10px;height:40px;line-height:38px;border:1px solid #d8d8d8;font-size:15px;box-sizing:border-box;}
+.input-a.gray {background-color:#e9e9e9;}
+textarea.input-a {padding-top:5px;padding-bottom:5px;line-height:18px;}
+
+/* form - radio */
+.radio {display:inline-block;vertical-align:-4px;margin-right:5px;width:16px;height:16px;background:url("https://www.ildongshop.com/w/images/common/ui_form.png") no-repeat 0 -30px;}
+.radio.focus {background-position:-30px -30px;}
+.radio.checked {background-position:-60px -30px;}
+.radio.disabled {background-position:-90px -30px;}
+.radio.checked.disabled {background-position:-120px -30px;}
+
+/* form - checkbox */
+.checkbox {display:inline-block;vertical-align:-4px;margin-right:5px;width:16px;height:16px;background:url("https://www.ildongshop.com/w/images/common/ui_form.png") no-repeat 0 0;}
+.checkbox.focus {background-position:-30px 0;}
+.checkbox.checked {background-position:-60px 0;}
+.checkbox.disabled {background-position:-90px 0;}
+.checkbox.checked.disabled {background-position:-120px 0;}
+
+/* form - select */
+.select-title {position:relative;display:inline-block;padding:4px 25px 4px 5px;height:28px;color:#666;border:1px solid #ddd;background:#fff url("https://www.ildongshop.com/w/images/common/ui_form.png") no-repeat 100% -60px;text-align:left;vertical-align:middle;cursor:pointer;box-sizing:border-box;}
+.select-title strong {width:100%;height:1.2em;font-weight:normal;font-size:12px;word-break:break-all;line-height:1.2em;padding:1px 0 2px;display:block;overflow:hidden;}
+.select-title.focus, .select-title.active {color:#474546;}
+.select-title.focus {background-position:100% -86px;}
+.select-title.active {background-position:100% -112px;}
+.select-title.disabled {color:#999;text-shadow:1px 1px 0 #fff;border-color:#bbb;background-color:#eee;}
+
+.select-option {border:1px solid #ddd;background:#fff;overflow:auto;}
+.select-option ul {margin:0;padding:0;}
+.select-option span,
+.select-option strong {height:1.1em;font-size:11px;font-weight:normal;color:#666;white-space:nowrap;text-overflow:ellipsis;line-height:1.4;text-decoration:none;padding:4px 5px 7px;display:block;overflow:hidden;cursor:pointer;}
+.select-option strong {font-weight:bold;color:#000;border-top:1px solid #eee;border-bottom:1px solid #ccc;}
+.select-option li li span {padding-left:10px;}
+.select-option span:hover, .select-option span.selected {color:#ef003c;}
+.select-option .disabled span,
+.select-option .disabled strong {color:#bbb;text-decoration:line-through;background:none;}
+
+.select-title.big {padding:0 25px 0 10px;height:40px;background-position:100% -54px;}
+.select-title.big strong {height:38px;font-weight:normal;font-size:15px;line-height:36px;font-family:"나눔 바른 고딕","Nanum Barun Gothic","돋움",dotum,Helvetica,sans-serif;}
+.select-title.big.focus {background-position:100% -80px;}
+.select-title.big.active {background-position:100% -106px;}
+
+.select-option.big ul {margin:0;padding:5px 0 8px;}
+.select-option.big span,
+.select-option.big strong {font-size:15px;padding:8px 10px;}
+.select-option.big span:hover, .select-option.big span.selected {color:#ef003c;}
+
+/* form - file */
+.form-file input[type="file"] {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+.form-file label {display:inline-block;padding:0 18px 0 17px;height:40px;line-height:38px;border:1px solid #474546;background-color:#474546;font-size:14px;color:#fff;vertical-align:middle;box-sizing:border-box;}
+.form-file .upload-name {width:247px;background-color:#f9f9f9;}
+
+/* form - search */
+.form-search {display:inline-block;}
+
+/* form - search bbs */
+.form-search.bbs {display:block;text-align:center;}
+.form-search.bbs .select-bbs.select-title {padding-left:10px;height:40px;border:1px solid #ddd;background-position:100% -55px;}
+.form-search.bbs .select-bbs.select-title.focus, .form-search.bbs .select-bbs.select-title.active {color:#000;}
+.form-search.bbs .select-bbs.select-title.focus {background-position:100% -81px;}
+.form-search.bbs .select-bbs.select-title.active {background-position:100% -107px;}
+.form-search.bbs .select-bbs.select-title strong {height:28px;line-height:28px;font-size:15px;color:#666;}
+.select-bbs.select-option span {font-size:12px;}
+.form-search.bbs .placeholder small {padding-left:5px;color:#a4a4a4;font-size:15px;letter-spacing:0;}
+.form-search.bbs .input-a {padding:0 15px;width:260px;}
+.form-search.bbs .btn-search {width:65px;height:40px;line-height:38px;background-color:#474546;font-size:15px;color:#fff;letter-spacing:-1px;}
+
+/* form - email */
+.form-email {display:inline-block;font-size:14px;color:#a7a7a7;line-height:28px;}
+.form-email .input-a {width:114px;}
+.form-email .select-email.select-title {border:1px solid #ddd;font-size:13px;}
+
+/* form - tel */
+.form-tel {display:inline-block;font-size:14px;color:#a7a7a7;line-height:28px;}
+.form-tel .input-a {width:74px;}
+.form-tel .telnum1 {width:70px;}
+.form-tel .select-tel.select-title {font-size:13px;}
+
+/* form - addr */
+.form-addr {display:block;font-size:14px;color:#a7a7a7;line-height:28px;}
+.form-addr .input-a {margin-top:5px;width:100%;}
+.form-addr .zipcode.input-a {margin-top:0;width:60px;}
+
+/* 레이아웃 */
+.gis .gis-header {position:absolute;top:0;right:0;left:0;height:60px;background:#3853d8;border-bottom:1px solid #efefef;z-index:50;overflow:hidden;}
+.gis .gis-header .btn-menu {display:block;float:left;width:74px;height:60px;background:url(../images/ico.png) repeat 0 0;border-right:1px solid #657be9;}
+.gis .gis-header .search {display:block;float:left;margin:11px 0 0 15px;}
+.gis .gis-header .search .search-input {position:relative;float:left;}
+.gis .gis-header .search .search-input input {display:block;position:relative;float:left;width:345px;height:38px;padding:0 0 0 15px;box-sizing:border-box;border:1px solid #efefef;z-index:10;color:#404040;font-size:15px;font-weight:bold;}
+.gis .gis-header .search .search-input:before {content:"";display:block;float:left;width:38px;height:38px;border-radius:3px 0 0 3px;background:#efefef url(../images/ico.png) repeat 1px -60px;z-index:20;}
+.gis .gis-header .search button {display:block;float:left;width:105px;height:38px;line-height:38px;border:0;font-size:15px;color:#fff;background:#263992;border-radius:0 3px 3px 0;}
+.gis .gis-header .util {float:right;}
+.gis .gis-header .util h1 {float:left;display:block;color:#fff;line-height:60px;font-size:15px;font-weight:normal;margin:0 30px;}
+.gis .gis-header .util .btn-home {display:block;position:relative;float:left;width:60px;height:60px;border-left:1px solid #657be9;font-size:0;box-sizing:border-box;}
+.gis .gis-header .util .btn-home:after {content:"";display:block;position:absolute;top:50%;left:50%;width:50px;height:50px;margin-left:-25px;margin-top:-25px;background:url(../images/ico.png) no-repeat 0 -100px;}
+.gis .gis-header .util .btn-mypage {display:block;position:relative;float:left;width:60px;height:60px;border-left:1px solid #657be9;font-size:0;box-sizing:border-box;}
+.gis .gis-header .util .btn-mypage:after {content:"";display:block;position:absolute;top:50%;left:50%;width:50px;height:50px;margin-left:-25px;margin-top:-25px;background:url(../images/ico.png) no-repeat -50px -100px;}
+.gis .gis-header .menu {position:absolute;top:60px;left:0;right:0;height:60px;background:#fff;clear:both;}
+.gis .gis-header .menu a {margin:0 10px;color:#404040;font-size:13px;font-weight:bold;line-height:60px;}
+.gis .gis-header .menu .notice {position:absolute;top:0;right:0;}
+.gis .gis-header .menu .notice {}
+.gis .gis-header .menu .notice .swiper-container {float:left;width:520px;}
+.gis .gis-header .menu .notice .swiper-slide {padding-left:30px;background:#fff;}
+.gis .gis-header .menu .notice .swiper-slide a {font-size:12px;color:#404040;}
+.gis .gis-header .menu .notice .swiper-pagination {top:0;left:0;bottom:0;font-size:11px;color:#acacac;width:auto;line-height:60px;}
+.gis .gis-header .menu .notice .swiper-button-next {position:absolute;top:0;right:0;bottom:auto;left:auto;width:60px;height:60px;margin:0;background:#f60;}
+.gis .gis-header .menu .notice .swiper-button-prev {position:absolute;top:0;right:60px;bottom:auto;left:auto;width:60px;height:60px;margin:0;background:#f60;}
+.gis .gis-header .menu .notice .btn-more {float:left;width:120px;height:60px;margin:0;background:#263992;color:#fff;line-height:60px;text-align:center;font-size:13px;border-left:1px solid #808cc0;box-sizing:border-box;}
+.gis .gis-header.active {height:120px;}
+.gis .stage {position:absolute;top:60px;left:345px;bottom:0;right:0;background:#222;}
+
+
+/* SNB */
+.gis aside {position:absolute;top:60px;bottom:0;left:0;width:345px;background:url(../images/aside-bg.png) repeat 0 0;z-index:40;}
+.gis aside .tabs a {display:block;width:75px;height:75px;background:url(../images/aside-menu.png) no-repeat 0 0;font-size:0;}
+.gis aside .tabs a.menu01 {background-position:0 0;}
+.gis aside .tabs a.menu01.active {background-position:-75px 0;}
+.gis aside .tabs a.menu02 {background-position:0 -75px;}
+.gis aside .tabs a.menu02.active {background-position:-75px -75px;}
+.gis aside .tabs a.menu03 {background-position:0 -150px;}
+.gis aside .tabs a.menu03.active {background-position:-75px -150px;}
+.gis aside .tabs a.menu04 {background-position:0 -225px;}
+.gis aside .tabs a.menu04.active {background-position:-75px -225px;}
+.gis aside .tabs a.menu05 {background-position:0 -300px;}
+.gis aside .tabs a.menu05.active {background-position:-75px -300px;}
+
+.gis aside .search {position:absolute;top:0;left:75px;bottom:0;right:0;background:#f9f9f9;}
+.gis aside .search .inner-tab {position:relative;width:240px;height:40px;margin:0 auto;z-index:20;}
+.gis aside .search .inner-tab li {float:left;}
+.gis aside .search .inner-tab li a {display:block;width:115px;height:30px;margin-top:5px;margin-left:5px;background:#fff;border:1px solid #e2e2e2;border-radius:3px;line-height:30px;color:#adadae;text-align:center;font-size:13px;box-sizing:border-box;font-weight:bold;}
+.gis aside .search .inner-tab li:first-child a {margin-right:5px;margin-left:0;}
+.gis aside .search .inner-tab li a.active {height:35px;border:1px solid #3853d8;border-bottom:none;color:#3853d8;border-radius:3px 3px 0 0;}
+.gis aside .search .inner-tab:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
+.gis aside .search .place {position:absolute;top:40px;right:15px;bottom:15px;left:15px;border:1px solid #3853d8;margin-top:-1px;border-radius:0 0 3px 3px;box-sizing:border-box;clear:both;z-index:10;}
+.gis aside .search .place .sti {position:relative;height:24px;margin:3px;padding-left:27px;background:#3853d8;border-radius:2px;line-height:24px;font-weight:bold;font-size:13px;color:#fff;box-sizing:border-box;}
+.gis aside .search .place .sti:after {content:"";display:block;position:absolute;top:50%;left:6px;width:15px;height:15px;margin-top:-7.5px;background:url(../images/ico.png) no-repeat -75px -175px;}
+.gis aside .search .place .sti strong {position:absolute;right:12px;font-size:12px;color:#fff;opacity:.6;}
+.gis aside .search .place .scroll-wrapper {position:absolute;top:0px;left:0;right:0;bottom:30px;z-index:10;}
+.gis aside .search .place ul {margin:0 5px;}
+.gis aside .search .place ul li {padding:15px 0 15px 0;border-top:1px solid #e2e2e2;box-sizing:border-box;}
+.gis aside .search .place ul li:first-child {border-top:none;}
+.gis aside .search .place ul li a .title {position:relative;padding-left:28px;font-size:15px;font-weight:bold;color:#2d2c2c;}
+.gis aside .search .place ul li a .title:after {content:"";display:block;position:absolute;top:-4px;left:2px;width:50px;height:50px;background:url(../images/ico.png) no-repeat -100px -150px;}
+.gis aside .search .place ul li a .add-number {height:15px;margin-left:28px;font-size:11px;font-weight:normal;line-height:15px;}
+.gis aside .search .place ul li a .add-number span {display:inline-block;height:15px;margin-right:3px;padding:0 5px;font-size:10px;color:#fff;border-radius:15px;background:#717171;}
+.gis aside .search .place .btn-more {position:absolute;bottom:3px;left:3px;right:3px;height:30px;line-height:30px;text-align:center;font-size:15px;color:#fff;font-weight:bold;border-radius:3px;z-index:20;}
+
+
+.gis aside .search .address {display:none;}
+
+.gis aside .layer {position:absolute;top:0;left:75px;bottom:0;right:0;background:#f9f9f9;}
+.gis aside .layer h4 {display:block;position:relative;width:240px;height:40px;margin:5px auto 0;padding-left:14px;font-size:15px;color:#484848;font-weight:bold;line-height:40px;box-sizing:border-box;}
+.gis aside .layer h4:after {content:"";display:block;position:absolute;top:50%;left:-4px;width:15px;height:15px;margin-top:-7.5px;background:url(../images/ico.png) no-repeat 0 -175px;}
+.gis aside .layer .list {width:240px;margin:0 auto;border:1px solid #3853d8;border-radius:3px;}
+.gis aside .layer .list li {position:relative;margin:0 5px;border-bottom:1px solid #e2e2e2;box-sizing:border-box;}
+.gis aside .layer .list li > a {display:block;position:relative;width:100%;height:44px;font-size:15px;font-weight:bold;color:#2d2c2c;box-sizing:border-box;padding-left:28px;line-height:44px;}
+.gis aside .layer .list li > a:after {content:"";display:block;position:absolute;top:50%;left:7px;width:15px;height:15px;margin-top:-7.5px;background:url(../images/ico.png) no-repeat -25px -175px;}
+.gis aside .layer .list li.active a:after {background-position:-25px -190px;}
+.gis aside .layer .list li > a:hover {background:#fbfbfb;color:#858484;}
+.gis aside .layer .list li > a:hover:after {background-position:-25px -190px;}
+.gis aside .layer .list li .option {padding:0 0 15px 0;margin-top:-7px;display:none;}
+.gis aside .layer .list li .option p {position:relative;margin-bottom:5px;padding:0 0 0 40px;box-sizing:border-box;}
+.gis aside .layer .list li .option p:after {content:"";display:block;height:0;font-size:0;line-height:0;clear:both;}
+.gis aside .layer .list li .option p .util {position:absolute;top:0;right:5px;}
+.gis aside .layer .list li .option .btn-example {display:block;float:left;width:60px;height:18px;box-sizing:border-box;line-height:16px;border:2px solid #e2e2e2;font-size:12px;color:#6c6c6c;font-weight:bold;text-align:center;margin-left:5px;border-radius:3px;}
+.gis aside .layer .list li .option .btn-example:hover {border-color:#3853d8;background:#3853d8;color:#fff;}
+.gis aside .layer .list li .option .ico-river {display:block;float:left;width:15px;height:15px;margin-top:1.5px;background:url(../images/ico.png) no-repeat 0 -190px;}
+.gis aside .layer .list li .option .ico-tributary {display:block;float:left;width:15px;height:15px;margin-top:1.5px;background:url(../images/ico.png) no-repeat 0 -205px;}
+.gis aside .layer .list li .option .ico-generosity {display:block;float:left;width:15px;height:15px;margin-top:1.5px;background:url(../images/ico.png) no-repeat -25px -205px;}
+.gis aside .layer .list li .option .ico-water {display:block;float:left;width:15px;height:15px;margin-top:1.5px;background:url(../images/ico.png) no-repeat 0 -220px;}
+.gis aside .layer .list li .option label {font-size:14px;color:#6c6c6c;font-weight:bold;}
+.gis aside .layer .list li .option .depth02 {display:block;margin:10px 0 0 0;padding:10px 0 0 0;clear:both;border-top:1px solid #e2e2e2;}
+.gis aside .layer .list li .option .depth02 label {margin-left:10px;}
+.gis aside .layer .list li .option .depth02 label:first-child {margin-left:0;}
+.gis aside .layer .list li.active .option {display:block;}
+
+
+
+/* 네비 */
+.gis .stage .navi {position:absolute;top:0;right:0;left:0;padding:0 0 0 6px;background:#f9f9f9;border-left:1px solid #efefef;height:50px;line-height:50px;z-index:30;}
+.gis .stage .navi a {position:relative;display:block;float:left;height:25px;margin:12.5px 22px;font-size:15px;color:#404040;line-height:25px;}
+.gis .stage .navi a:after {content:"";display:block;position:absolute;top:50%;left:-35px;width:25px;height:25px;margin-top:-12.5px;background:url(../images/ico.png) no-repeat -50px -180px;}
+.gis .stage .navi a:first-child:after {display:none;}
+.gis .stage .navi a:hover {color:#3853d8;font-weight:bold;}
+.gis .stage .navi a.active {color:#3853d8;font-weight:bold;}
+
+/* 맵 */
+.gis .stage .map {position:absolute;top:50px;left:0;bottom:0;right:0;z-index:10;}
+
+/* 맵 메뉴 */
+.gis .stage .map-menu {position:absolute;top:60px;right:30px;z-index:20;}
+.gis .stage .map-menu a {display:block;float:left;}
+.gis .stage .map-menu .map-type {float:left;}
+.gis .stage .map-menu .map-type a {width:42px;height:42px;margin-left:4px;line-height:42px;text-align:center;font-size:13px;color:#666;background:#fff;border-radius:100%;border:1px solid #dad7d0;box-sizing:border-box;}
+.gis .stage .map-menu .map-type a.active {background:#3853d8;color:#fff;border-color:#dad7d0;}
+.gis .stage .map-menu .map-change {float:left;}
+.gis .stage .map-menu .map-change .btn {position:relative;width:130px;height:40px;margin-left:8px;padding-left:28px;line-height:40px;background:#fff;border-radius:3px;font-size:15px;color:#666;box-sizing:border-box;font-weight:bold;}
+.gis .stage .map-menu .map-change .btn:after {content:"";display:block;position:absolute;top:50%;left:103px;width:15px;height:15px;margin-top:-7.5px;background:url(../images/ico.png) no-repeat -50px -190px;}
+.gis .stage .map-menu .map-change .depth02 {position:relative;top:-3px;width:130px;margin-left:8px;padding-bottom:10px;background:#fff;clear:both;display:none;}
+.gis .stage .map-menu .map-change .depth02 .inner {width:110px;margin:0 auto;border-top:1px solid #efefef;}
+.gis .stage .map-menu .map-change .depth02 a {position:relative;display:block;float:none;padding:0 0 0 16px;font-size:13px;box-sizing:border-box;color:#666;font-weight:bold;}
+.gis .stage .map-menu .map-change .depth02 a .name {display:block;height:15px;line-height:15px;margin:15px 0 10px 0;}
+.gis .stage .map-menu .map-change .depth02 a .map-select {display:block;position:relative;width:110px;height:55px;margin-left:-16px;background:url(../images/ico.png) no-repeat -200px 0;border:1px solid #666;border-radius:2px;box-sizing:border-box;overflow:hidden;}
+.gis .stage .map-menu .map-change .depth02 a.active .map-select {border:2px solid #3853d8}
+.gis .stage .map-menu .map-change .depth02 a.active .map-select:after {content:"";display:block;position:absolute;bottom:-5px;right:-5px;width:25px;height:25px;margin-left:-16px;background:url(../images/ico.png) no-repeat -75px -150px;}
+.gis .stage .map-menu .map-change .depth02 a.map-google .map-select {background-position:-200px 0;}
+.gis .stage .map-menu .map-change .depth02 a.map-naver .map-select {background-position:-200px -60px;}
+.gis .stage .map-menu .map-change .depth02 a.map-daum .map-select {background-position:-200px -120px;}
+.gis .stage .map-menu .map-change .depth02 a:before {content:"";display:block;position:absolute;top:0px;left:0;width:15px;height:15px;background:url(../images/ico.png) no-repeat -50px -205px;}
+.gis .stage .map-menu .map-change .depth02 a.map-google:before {background-position:-50px -205px;}
+.gis .stage .map-menu .map-change .depth02 a.map-naver:before {background-position:-50px -220px;}
+.gis .stage .map-menu .map-change .depth02 a.map-daum:before {background-position:-50px -235px;}
+.gis .stage .map-menu .map-change.active .btn:after {background-position:-50px -205px;}
+.gis .stage .map-menu .map-change.active .depth02 {display:block;}
+.gis .stage .map-menu .btn-screensave {position:relative;width:135px;height:40px;margin-left:8px;padding-left:53px;line-height:40px;background:#fff;border-radius:3px;font-size:15px;color:#666;box-sizing:border-box;font-weight:bold;}
+.gis .stage .map-menu .btn-screensave:after {content:"";display:block;position:absolute;top:50%;left:23px;width:25px;height:25px;margin-top:-12.5px;background:url(../images/ico.png) no-repeat -25px -150px;}
+.gis .stage .map-menu .btn-screenprint {position:relative;width:135px;height:40px;margin-left:8px;padding-left:53px;line-height:40px;background:#fff;border-radius:3px;font-size:15px;color:#666;box-sizing:border-box;font-weight:bold;}
+.gis .stage .map-menu .btn-screenprint:after {content:"";display:block;position:absolute;top:50%;left:23px;width:25px;height:25px;margin-top:-12.5px;background:url(../images/ico.png) no-repeat -50px -150px;}
+
+/* 맵 컨트롤 */
+.gis .stage .map-control {position:absolute;top:200px;right:50px;z-index:20;}
+.gis .stage .map-control a {display:block;width:23px;height:23px;margin-bottom:5px;background:url(../images/map-control.png) no-repeat -11px -280px;}
+.gis .stage .map-control a.menu01 {background-position:-11px -214px;}
+.gis .stage .map-control a.menu02 {background-position:-11px -242px;}
+.gis .stage .map-control a.menu03 {background-position:-11px -270px;}
+.gis .stage .map-control a.menu04 {background-position:-11px -298px;}
+.gis .stage .map-control a.menu05 {background-position:-11px -326px;}
+.gis .stage .map-control a.menu06 {background-position:-11px -354px;}
+.gis .stage .map-control a.menu07 {background-position:-11px -382px;}
+.gis .stage .map-control a.menu08 {background-position:-11px -410px;}
+.gis .stage .map-control a.menu09 {background-position:-11px -438px;}
+.gis .stage .map-control .btn-rudder {display:block;width:46px;height:46px;margin-bottom:22px;margin-left:-11px;background:url(../images/map-control.png) no-repeat 0 0;}
+.gis .stage .map-control .btn-plusminus {display:block;width:23px;height:126px;margin-bottom:20px;background:url(../images/map-control.png) no-repeat -11px -68px;}
+
+
+
+/* 맵 레이어 */
+.gis .stage .info {position:absolute;bottom:100px;right:200px;min-width:310px;padding:2px 15px 24px 15px;box-sizing:border-box;border:1px solid #3853d8;background:#fff;border-radius:3px;z-index:30;display:none;}
+.gis .stage .info h4 {position:relative;font-size:15px;font-weight:bold;color:#484848;border-bottom:1px solid #e2e2e2;height:34px;line-height:34px;padding:0 0 0 18px;}
+.gis .stage .info h4:after {content:"";display:block;position:absolute;top:50%;left:-4px;width:15px;height:15px;margin-top:-7.5px;background:url(../images/ico.png) no-repeat 0 -175px;}
+.gis .stage .info .util {position:absolute;top:6px;right:15px;}
+.gis .stage .info .util a {display:block;float:left;width:25px;height:25px;background:url(../images/ico.png) no-repeat -200px -205px;font-size:0;}
+.gis .stage .info .util a.btn-close {background-position:-200px -180px;}
+
+
+.gis .stage .info .info-summary {padding:16px 0;border-bottom:1px solid #e2e2e2;}
+.gis .stage .info .info-summary table {}
+.gis .stage .info .info-summary table th {padding:4px 0;font-size:11px;color:#6c6c6c;text-align:left;}
+.gis .stage .info .info-summary table td {padding:4px 0;}
+.gis .stage .info .info-summary table td span {display:inline-block;width:76px;height:22px;padding:0 10px;border-radius:3px;border:1px solid #e2e2e2;background:#f4f4f4;font-size:10px;color:#000;font-weight:bold;line-height:22px;box-sizing:border-box;}
+
+.gis .stage .info .info01 {position:relative;padding:19px 0 13px 0;border-bottom:1px solid #e2e2e2;font-size:10px;color:#000;font-weight:bold;}
+.gis .stage .info .info01 dt {font-size:11px;color:#9b9b9b;margin-bottom:10px;}
+.gis .stage .info .info01 dd strong {display:inline-block;width:75px;margin:0 15px 5px 0;height:14px;line-height:14px;border-right:1px solid #e2e2e2;}
+.gis .stage .info .info01 dd .point {color:#3853d8;}
+.gis .stage .info .info01 .water-point {position:absolute;bottom:10px;right:0;}
+
+.gis .stage .info .info02 {position:relative;padding:19px 0 13px 0;font-size:10px;color:#000;font-weight:bold;}
+.gis .stage .info .info02 dt {font-size:11px;color:#9b9b9b;margin-bottom:12px;}
+.gis .stage .info .info02 .tab {position:absolute;top:17px;right:0;}
+.gis .stage .info .info02 .tab a {display:block;float:left;width:80px;height:22px;box-sizing:border-box;line-height:22px;border:2px solid #e2e2e2;font-size:10px;color:#6c6c6c;font-weight:bold;text-align:center;margin-left:5px;border-radius:3px;}
+.gis .stage .info .info02 .tab a.active {background:#e2e2e2;}
+.gis .stage .info .info02 table {width:100%;}
+.gis .stage .info .info02 table th {padding:4px 0 3px 0;background:#f4f4f4;color:#000;font-size:10px;border:1px solid #e2e2e2;line-height:1;}
+.gis .stage .info .info02 table th:first-child {border-left:none;}
+.gis .stage .info .info02 table tr:last-child {border-right:none;}
+.gis .stage .info .info02 table td {padding:4px 0 3px 0;color:#000;font-size:10px;border:1px solid #e2e2e2;text-align:center;line-height:1;}
+.gis .stage .info .info02 table td:first-child {border-left:none;}
+.gis .stage .info .info02 table td:last-child {border-right:none;}
+
+.gis .stage .info .info02 .info-chart {display:none;}
+
+
+#map {background:#eee;}
